@@ -1,0 +1,55 @@
+////// colors //////
+$peachy-pink: #f9d4c8;
+// #f9d0c8
+$peachy-pink-gradient: #f9c4b9;
+$pale-yellow-gradient: #f3f2c1;
+
+////// mixin for centering //////
+// example: p { @include absolutecenter(y) }
+@mixin absolutecenter($axis: "both"){
+  position:absolute;
+  @if $axis == "y"{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if $axis == "x"{
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $axis == "both"{
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+  @if $axis == "right"{
+    right: 0%;
+  }
+}
+
+////// google fonts //////
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina|Baloo+Thambi|Bungee+Hairline|Carme|Codystar|Comfortaa:300,400,700|Fascinate|Fredoka+One|Megrim|Monoton|Montserrat+Alternates:400,600,700,800,900|Nixie+One|Padauk:400,700|Poiret+One|Raleway+Dots|Raleway:600,700,900');
+
+// font-family: 'Poiret One', cursive;
+// font-family: 'Baloo Bhaina', cursive;
+// font-family: 'Montserrat Alternates', sans-serif;
+// font-family: 'Nixie One', cursive;
+// font-family: 'Carme', sans-serif;
+// font-family: 'Megrim', cursive;
+// font-family: 'Padauk', sans-serif;
+// font-family: 'Baloo Thambi', cursive;
+// font-family: 'Fascinate', cursive;
+// font-family: 'Codystar', cursive;
+// font-family: 'Bungee Hairline', cursive;
+// font-family: 'Raleway Dots', cursive;
+// font-family: 'Comfortaa', cursive;
+// font-family: 'Fredoka One', cursive;
+// font-family: 'Monoton', cursive;
+// font-family: 'Raleway', sans-serif;
+
+@mixin gradient {
+  0%{background-position:50% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:50% 0%}
+}
+
+$animation-body: BackgroundGradient 20s ease infinite;
