@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build-client & npm run start-server",
-    "start-dev": "webpack -w & nodemon server/start -e html,js,css",
-    "start-server": "nodemon server/start",
+    "start-dev": "webpack -w & nodemon server -e html,js,css",
+    "start-server": "nodemon server",
     "build-client": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,7 +29,8 @@
     "body-parser": "^1.17.2",
     "classnames": "^2.2.5",
     "css-loader": "^0.28.1",
-    "express": "^4.15.3",
+    "express": "^4.15.4",
+    "file-loader": "^0.11.2",
     "gsap": "^1.20.2",
     "morgan": "^1.8.1",
     "node-sass": "^4.5.3",

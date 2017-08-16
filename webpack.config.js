@@ -2,7 +2,7 @@ const LiveReloadPlugin = require('webpack-livereload-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './browser/app/index',
+  entry: './client/index',
   output: {
     path: path.resolve(__dirname, 'public/dist'), // the absolute path for the directory where we want the output to be placed
     filename: 'bundle.js'
@@ -33,6 +33,14 @@ module.exports = {
       {
         test: /\.svg$/,
         loader: 'babel-loader!svg-react-loader'
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: "file-loader",
+        options: {
+          name: '[name].[ext]',
+          publicPath: 'assets/'
+        }
       }
     ]
   },

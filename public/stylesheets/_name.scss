@@ -1,0 +1,56 @@
+@import "utils";
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-attachment: fixed;
+  webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.name {
+  @include absolutecenter('both');
+  font-family: 'Monoton', cursive;
+  font-size: 2.5em;
+  font-weight: normal;
+  color: rgb(69, 12, 24);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  z-index: 1000;
+
+  -webkit-animation:colorchange 20s infinite alternate;
+  // animation-play-state: running;
+
+  @-webkit-keyframes colorchange {
+    0% {color: #f98c8c;}
+    10% {color: #9f3711;}
+    20% {color: #f1e10e;}
+    30% {color: #466b8e;}
+    40% {color: #f40b43;}
+    50% {color: #3640cf;}
+    60% {color: #be6c6c;}
+    70% {color: #c212b6;}
+    80% {color: #2dcfaf;}
+    90% {color: #800334;}
+    100% {color: #f98c8c;}
+  }
+  &:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+}
+// #8e44ad #b929af #34495e #f47dcb #345270
+
+@media screen and (min-width: 400px) {
+  .name {
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 400px) {
+  .name {
+    text-align: center;
+  }
+}
+
