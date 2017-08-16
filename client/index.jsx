@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import store from './store';
 // import injectTapEventPlugin from 'react-tap-event-plugin';
 import App from './components/App';
-import '../../public/stylesheets/index.scss';
+import '../public/stylesheets/index.scss';
 
 // injectTapEventPlugin();
 
