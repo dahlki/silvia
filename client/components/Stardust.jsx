@@ -67,12 +67,11 @@ export default class Stardust extends Component {
     );
       animateStaticStar(staticStar);
     }
-    console.log('props',this.props.static);
   }
 
   componentDidUpdate(e) {
     // console.log('e', e);
-    console.log('stardust props',this.props);
+    // console.log('stardust props',this.props);
 
     // const stardustDiv = this.stardustRef;
     // const r = (max) => {

@@ -42,12 +42,12 @@ export default class Landing extends Component {
       StaticStars.push(<Stardust static={true} key={i + ''}/>)
     }
     if (this.state.nameDiv) {
-      console.log('name div',this.state.nameDiv.clientWidth,this.state.nameDiv.clientHeight);
+      // console.log('name div',this.state.nameDiv.clientWidth,this.state.nameDiv.clientHeight);
     }
     return (
       <div className="background" style={background}>
         <div onMouseOver={this.handleHover} onMouseLeave={this.handleHover}>
-          <Name pathname={this.props.match.path} nameDiv={this.getNameDiv}/>
+          <Name pathname={this.props.match.path} getNameDiv={this.getNameDiv}/>
         </div>
         <TransitionGroup className={stardustContainerStyle}>
           {Stars}
