@@ -3,7 +3,11 @@ $peachy-pink: #f9d4c8;
 // #f9d0c8
 $peachy-pink-gradient: #f9c4b9;
 $pale-yellow-gradient: #f3f2c1;
-
+$peach-gradient: rgb(247, 107, 88);
+$pink-color: rgb(241, 184, 200);
+$another-pink: #EFB6B6;
+$contact-icon-color: rgb(158, 71, 71);
+// rgb(148, 149, 148) rgb(227, 11, 63)
 ////// mixin for centering //////
 // example: p { @include absolutecenter(y) }
 @mixin absolutecenter($axis: "both"){
@@ -48,8 +52,10 @@ $pale-yellow-gradient: #f3f2c1;
 
 @mixin gradient {
   0%{background-position:50% 0%}
+  // 25%{background-position:50% 50%}
   50%{background-position:50% 100%}
+  // 75%{background-position:50% 50%}
   100%{background-position:50% 0%}
 }
 
-$animation-body: BackgroundGradient 20s ease infinite;
+$animation-body: BackgroundGradient 15s ease infinite;
