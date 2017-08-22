@@ -1,32 +1,12 @@
 @import 'utils';
 
-html, body, .app {
+html, body {
+  display: inline-block;
   box-sizing: border-box;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   margin: 0px;
-  background-color: rgb(178, 190, 242);
-}
-
-.app {
-  background: linear-gradient(180deg, $peachy-pink-gradient, $pale-yellow-gradient);
-  background-size: 100% 200%;
-
-  -webkit-animation: $animation-body;
-  -moz-animation: $animation-body;
-  -o-animation: $animation-body;
-  animation: $animation-body;
-
-  @-webkit-keyframes BackgroundGradient {
-    @include gradient;
-  }
-  @-moz-keyframes BackgroundGradient {
-    @include gradient;
-  }
-  @-o-keyframes BackgroundGradient {
-    @include gradient;
-  }
-  @keyframes BackgroundGradient {
-    @include gradient;
-  }
+  background-color: $peachy-pink-gradient;
+  overflow: hidden;
+  position: relative;
 }
