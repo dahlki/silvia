@@ -9,10 +9,10 @@
 table {
   bottom: .7em;
   margin: 0 auto;
-  // @media screen and (max-width: 300px) {
-  //   width: 100%;
-  //   align-items: center;
-  // }
+  /*@media screen and (max-width: 300px) {
+  width: 100%;
+  align-items: center;
+  }*/
 }
 tbody {
   align-items: center;
@@ -21,7 +21,7 @@ tr {
   height: 4em;
 }
 th, td {
-  // border: 1px solid black;
+  /*border: 1px solid black;*/
   text-align: -webkit-center;
   width: 5em;
 }
@@ -37,8 +37,8 @@ a .github-icon {
   -ms-transition: transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
   transform: scale(1);
-  // -webkit-box-reflect: below 0
-  //   -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.1, transparent), to(white));
+  /*-webkit-box-reflect: below 0
+  -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.1, transparent), to(white));*/
   &>g>g>path {
     fill: $contact-icon-color;
   }
@@ -85,8 +85,8 @@ a .github-icon:hover {
   -ms-transition: transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
   transform: scale(1);
-  // -webkit-box-reflect: below 0
-  //   -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.15, transparent), to(white));
+  /*-webkit-box-reflect: below 0
+  -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.15, transparent), to(white));*/
 
   &>path, rect, circle {
     fill: $contact-icon-color;
@@ -133,8 +133,8 @@ a .email-icon {
   transform: scale(1);
   fill: $contact-icon-color;
   stroke-opacity: 0;
-  // -webkit-box-reflect: below 0
-  //   -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.15, transparent), to(white));
+  /*-webkit-box-reflect: below 0
+  -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.15, transparent), to(white));*/
 
   &>g>path {
     fill: rgba(250, 250, 250, 0);

@@ -36,16 +36,14 @@ export default class NameContainer extends Component {
     this.setState({showName: true})
     this.props.getNameDiv(this.nameContainerRef);
     this.setState({pos:{...this.nameNode.getBoundingClientRect()}});
-    console.log(this.state.pos)
   }
+
   handleMouseMove(e) {
     this.setState({pos: {left: e.pageX,top: e.pageY}});
     let [moveX, moveY] = [(this.state.pos.left), (this.state.pos.top)];
     let nameNode = this.nameNode;
-    console.log(this.state.pos, e.pageX, e.pageY);
-    // nameNode.style.transform = `translate(${moveX / 2}px, ${moveY / 2}px)`;
-    console.log(window.innerWidth)
-    nameNode.style.textShadow = `${(window.innerWidth/2-moveX) /120}px ${(window.innerHeight/2-moveY) /120}px rgba(222, 250, 223, .9)`;
+    // nameNode.style.transform = `translate(${moveX / 2}px, ${moveY / 2}px)`; rgba(222, 250, 223, .9)
+    nameNode.style.textShadow = `${(window.innerWidth/2-moveX) /100}px ${(window.innerHeight/2-moveY) /100}px rgba(234,114,198,.5) `;
 	}
 
   render() {
