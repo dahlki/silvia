@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TweenLite } from 'gsap';
-import { TransitionGroup } from  'react-transition-group';
+import { TransitionGroup, Transition } from  'react-transition-group';
 import classnames from 'classnames/bind';
 import nebula from '../../public/assets/nebula.jpg';
 import Name from './NameContainer';
@@ -34,23 +34,24 @@ export default class Landing extends Component {
   render () {
     const stardustContainerStyle = classnames('tg');
     const numOfStars = 50;
-    // const numOfStaticStars = 20;
     const Stars = [];
     const StaticStars = [];
     for (let i = 0; i < numOfStars; i++ ) {
-      Stars.push(<Stardust hover={this.state.nameHover} hoverDiv={this.state.nameDiv} key={i + ''}/>)
-      StaticStars.push(<Stardust static={true} key={i + ''}/>)
+      Stars.push(<Stardust isStatic={false} hover={this.state.nameHover} hoverDiv={this.state.nameDiv} key={i + ''}/>)
+      if (i % 1.5) StaticStars.push(<Stardust isStatic={true} key={i + ''}/>)
     }
     if (this.state.nameDiv) {
-      console.log('name div',this.state.nameDiv.clientWidth,this.state.nameDiv.clientHeight);
+      // console.log('name div',this.state.nameDiv.clientWidth,this.state.nameDiv.clientHeight);
     }
     return (
       <div className="background" style={background}>
         <div onMouseOver={this.handleHover} onMouseLeave={this.handleHover}>
-          <Name pathname={this.props.match.path} nameDiv={this.getNameDiv}/>
+          <Name pathname={this.props.match.path} getNameDiv={this.getNameDiv}/>
         </div>
         <TransitionGroup className={stardustContainerStyle}>
           {Stars}
+        </TransitionGroup>
+        <TransitionGroup className={stardustContainerStyle}>
           {StaticStars}
         </TransitionGroup>
       </div>

@@ -23,26 +23,27 @@
   height:.5em;
   position:absolute;
   background-color: rgba(250, 250, 250, 0.75);
-  box-shadow:0px 0px 10px 8px rgba(249, 227, 227, 1);
+  box-shadow: 0px 0px 10px 5px rgba(249, 227, 227, 1);
   border-radius: 50%;
-  filter: blur(1px);
- -webkit-filter: blur(1px);
+  filter: blur(.5px);
+ -webkit-filter: blur(.5px);
   z-index:2;
-  // rgba(249, 205, 248, 0.8) rgba(250, 250, 250, 0.75) rgba(214, 244, 229, 0.75) rgba(200, 246, 249, .5)
+  /*rgba(249, 205, 248, 0.8) rgba(250, 250, 250, 0.75) rgba(214, 244, 229, 0.75) rgba(200, 246, 249, .5)*/
 }
 .staticStar {
-  width:2em;
-  height:2em;
+  width:4em;
+  height:4em;
   position:absolute;
-  // background-color: rgba(245, 214, 204, 0.5);
-  box-shadow:inset 0px 0px 10em rgba(211, 246, 249, 0.5);
+  /*background-color: rgba(245, 214, 204, 0.5);*/
+  box-shadow:inset 0px 0px 12em rgba(200, 237, 244, .7);
   border-radius: 50%;
   filter: blur(2px);
  -webkit-filter: blur(2px);
- // background-color: #fff;
- //  box-shadow:
- //    0 0 5px 2px rgba(0, 255, 255, 0.7),
- //    0 0 10px 6px rgba(249, 205, 248, 0.8);
+ /*rgba(211, 246, 249, 0.6);
+ background-color: #fff;
+ box-shadow:
+ 0 0 5px 2px rgba(0, 255, 255, 0.7),
+ 0 0 10px 6px rgba(249, 205, 248, 0.8);*/
 }
 .buttonShowName {
   // cursor: url(../assets/cursor.jpg), pointer;
@@ -73,25 +74,27 @@
   transition: opacity 500ms ease-out;
 }
 .nameDiv {
+  height: 100vh;
+  width: 100vw;
   z-index: 1000;
-  @include absolutecenter('both');
-   display:inline-block;
+  position: absolute;  
+  display:inline-block;
  }
 .name {
   // cursor: url(../assets/cursor.jpg), pointer;
   z-index: 1000;
   @include absolutecenter('both');
   font-family: 'Monoton', Courier, sans-serif;
-  font-size: 2.5em;
+  font-size: 5em;
   font-weight: normal;
   color: rgb(69, 12, 24);
-  text-shadow: 2px 2px rgba(142, 139, 139, 0.3);
+  text-shadow: 2px 2px rgba(234,114,198,.7);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-animation: colorchange 20s infinite alternate;
   -webkit-animation-delay: 1.2s; /* Safari 4.0 - 8.0 */
     animation-delay: 1.2s;
-  // animation-play-state: running;
+  /*animation-play-state: running; rgba(142, 139, 139, 0.3);*/
 
   @-webkit-keyframes colorchange {
     0% {color: #f98c8c;}
@@ -109,10 +112,10 @@
   &:hover {
     animation-play-state: paused;
     cursor: pointer;
-    // cursor: url(../assets/cursor.jpg), pointer;
+    /*cursor: url(../assets/cursor.jpg), pointer;*/
   }
 }
-// #8e44ad #b929af #34495e #f47dcb #345270 #f1e10e
+/*#8e44ad #b929af #34495e #f47dcb #345270 #f1e10e*/
 
 @media screen and (min-width: 400px) {
   .name {
