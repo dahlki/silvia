@@ -10,7 +10,7 @@ module.exports = {
   context: __dirname,
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.svg', '*']
+    extensions: ['.js', '.jsx', '.json', '.svg', 'pdf', '*']
   },
   module: {
     rules: [
@@ -35,12 +35,12 @@ module.exports = {
         loader: 'babel-loader!svg-react-loader'
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|pdf)$/,
         loader: "file-loader",
         options: {
           name: '[name].[ext]',
           publicPath: 'assets/',
-          outputPath: '../assets/'
+          // outputPath: '../assets/'
         }
       }
     ]

@@ -2,7 +2,7 @@ import React from 'react';
 import { StaggeredMotion, spring } from 'react-motion';
 import Contact from './Contact';
 
-const Site =  () => {
+const Site = () => {
   return (
     <div className='home gradient'>
       <Contact/>

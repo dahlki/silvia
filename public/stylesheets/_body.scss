@@ -1,13 +1,13 @@
 @import 'utils';
 
 html, body {
-  display: inline-block;
+  /*display: block;*/
   box-sizing: border-box;
   height: 100%;
   width: 100vw;
   margin: 0px;
   background-color: $peachy-pink-gradient;
   overflow: hidden;
-  position: relative;
+  position: absolute;
   font-size: 12px;
 }

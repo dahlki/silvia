@@ -8,6 +8,10 @@ export default class Stardust extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      windowSize: {
+        w: this.props.w,
+        h: this.props.h,
+      },
       star: [],
       staticStar: [],
       isStatic: props.isStatic,
@@ -16,14 +20,16 @@ export default class Stardust extends Component {
   }
 
   componentDidMount() {
+    // window.addEventListener("resize", this.handleResize.bind(this));
     const stardustDiv = this.stardustRef;
-
-    const h = stardustDiv.clientHeight;
-    const w = stardustDiv.clientWidth;
+    // const h = stardustDiv.clientHeight;
+    // const w = stardustDiv.clientWidth;
+    const h = this.state.windowSize.h;
+    const w = this.state.windowSize.w;
 
     const star = this.starRef;
     const staticStar = this.staticStarRef;
-   
+
     if (!this.state.isStatic) {
       setTween(star, 'star', w, h, 0)
       this.setState({star})
@@ -35,13 +41,26 @@ export default class Stardust extends Component {
     }
   }
 
+   handleResize(e) {
+    const { innerWidth: w, innerHeight: h } = window;
+    this.setState({windowSize: {w, h}})
+  }
+
+  componentWillUnmount() {
+    // window.removeEventListener("resize", this.handleResize.bind(this));
+  }
+
   render () {
-    // console.log(this.state);
     return (
-      <div className="stardust" ref={c => this.stardustRef = c}>
+      <div ref={c => this.stardustRef = c}>
         <div ref={s => this.starRef = s}/>
         <div ref={s => this.staticStarRef = s}/>
       </div>
-    )
+      )
   }
+}
+
+Stardust.defaultProps = {
+  w: window.innerWidth,
+  h: window.innerHeight
 }
