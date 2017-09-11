@@ -1,0 +1,228 @@
+@import "utils";
+
+.projects {
+	display: grid;
+	width: 60%;
+	/*padding-bottom: 100%;*/
+	height: 60%;
+	grid-template-columns: repeat(7, 1fr);
+  grid-gap: 1em;
+  grid-auto-rows: 1fr;
+  align-content: space-evenly;
+  /*overflow: hidden;*/
+  object-fit: cover;
+
+	margin: auto;
+	padding: 0;
+  font-size: 2em;
+  font-family: 'Comfortaa', cursive, sans-serif;
+  font-weight: bolder;
+  color: white;
+  /*003633 300017*/
+  @include absolutecenter('both');
+	text-shadow: -1.5px -1.5px #f0a8dc;
+	/*B7DCCB 00C8F2 f0a8dc*/
+	z-index: 1000;
+}
+@media screen and (max-width: 1100px) {
+  .projects {
+  	height:60%;
+  	/*width: 55%;*/
+    font-size: 2em;
+    @include absolutecenter('both') 
+  }
+}
+@media screen and (max-width: 1000px) {
+  .projects {
+  	height: 60%;
+  	width: 75%;
+    font-size: 2em;
+    @include absolutecenter('both') 
+  }
+}
+@media screen and (max-width: 850px) {
+  .projects {
+  	width: 75%;
+  	height: 55%;
+    font-size: 1.8em;
+    @include absolutecenter('both') 
+  }
+}
+@media screen and (max-width: 700px) {
+  .projects {
+  	width: 80%;
+  	height: 60%;
+    font-size: 1.8em;
+    @include absolutecenter('both') 
+  }
+}
+/*@media screen and (max-width: 600px) {
+  .projects {
+  	height: 50%;
+    font-size: 1.8em;
+    @include absolutecenter('both') 
+  }
+}*/
+@media screen and (max-width: 600px) {
+  .projects {
+  	margin-top: 5%;
+  	padding-top: 0;
+  	width: 70%;
+  	height: 60%;
+  	align-content: space-between;
+  }
+}
+@media screen and (max-device-width: 600px) {
+  .projects {
+  	margin-top: 5%;
+  	padding-top: 0;
+  	/*width: 50%;*/
+  	height: 60%;
+  	align-content: space-between;
+  }
+}
+/*@media screen and (max-width: 450px) {
+  .projects {
+  	width: 70%;
+  	height: 40%;
+    font-size: 1.5em;
+    @include absolutecenter('both') 
+  }
+}
+@media screen and (max-width: 350px) {
+  .projects {
+  	width: 80%;
+  	height: 40%;
+    font-size: 1.5em;
+    @include absolutecenter('both') 
+  }
+}*/
+
+.project {
+	position: relative;
+	display: block;
+	text-align: center;
+	margin: 0;
+	padding-top: 1em;
+	background-color: #E0DEDF;
+	border-radius: 2%;
+	/*box-shadow: -2px -2px 5px #888888;*/
+}
+@media screen and (max-width: 600px) {
+  .project {
+  	height: 100%;
+  	align-content: normal;
+  }
+}
+@media screen and (max-device-width: 600px) {
+  li.project {
+  	height: 20%;
+  	align-content: space-between;
+  }
+}
+
+li.palace {
+	grid-column: 1 / 5;
+  grid-row: 2 / 6;
+  background: #f5efef; /* For browsers that do not support gradients */    
+  background: -webkit-linear-gradient(left top, #f5efef, #feada6); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #f5efef, #feada6); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #f5efef, #feada6); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #f5efef, $peachy-pink-gradient); /* Standard syntax (must be last) */
+}
+@media screen and (max-width: 600px) {
+	li.palace {
+  grid-column: 1 / 8;
+	grid-row: 1 / 3;
+	}
+}
+@media screen and (max-width: 300px) {
+  li.palace {
+  	background: transparent;
+  }
+}
+@media screen and (max-device-width: 600px) {
+  li.palace {
+  	background: transparent;
+  }
+}	
+
+
+li.blooming {
+	grid-column: 5 / 8;
+  grid-row: 1 / 4;
+  /*background: #ddd6f3;
+  background: -webkit-linear-gradient(left top, #ddd6f3, #F6F3D1);
+  background: -o-linear-gradient(bottom right, #ddd6f3, #F6F3D1);
+  background: -moz-linear-gradient(bottom right, #ddd6f3, #F6F3D1);
+  background: linear-gradient(to bottom right, #ddd6f3, #F6F3D1);*/
+  /*faaca8 A17188*/
+  background: #f5efef; /* For browsers that do not support gradients */    
+  background: -webkit-linear-gradient(left top, #f5efef, #feada6); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #f5efef, #feada6); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #f5efef, #feada6); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #f5efef, $peachy-pink-gradient); /* Standard syntax (must be last) */
+}
+@media screen and (max-width: 600px) {
+	li.blooming {
+  grid-column: 1 / 8;
+	grid-row: 3 / 5;
+	}
+}
+@media screen and (max-width: 300px) {
+  li.blooming {
+  	background: transparent;
+  }
+}
+@media screen and (max-device-width: 600px) {
+  li.blooming {
+  	background: transparent;
+  }
+}	
+
+li.graceshopper {
+	grid-column: 5 / 8;
+  grid-row: 4 / 7;
+  /*background: #E5FDF0;
+  background: -webkit-linear-gradient(left top, #E5FDF0, #bcc1e5);
+  background: -o-linear-gradient(bottom right, #E5FDF0, #bcc1e5);
+  background: -moz-linear-gradient(bottom right, #E5FDF0, #bcc1e5);
+  background: linear-gradient(to bottom right, #E5FDF0, #bcc1e5);*/
+  /*ADA8ED e7dff0 dacee8 e8f0df f0dff0 dff0e7 cecfe8 bcbee0 F8FFD9 f3ffc0 eeffa7 C0FFEE f0f8f4 dafff5 dff0e7 F3ECFB ECFBF3 CED2EC bcc1e5*/
+  background: #f5efef; /* For browsers that do not support gradients */    
+  background: -webkit-linear-gradient(left top, #f5efef, #feada6); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #f5efef, #feada6); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #f5efef, #feada6); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #f5efef, $peachy-pink-gradient); /* Standard syntax (must be last) */
+}
+@media screen and (max-width: 600px) {
+	li.graceshopper {
+  grid-column: 1 / 8;
+	grid-row: 5 / 7;
+	}
+}
+@media screen and (max-width: 300px) {
+  li.graceshopper {
+  	background: transparent;
+  }
+}
+@media screen and (max-device-width: 600px) {
+  li.graceshopper {
+  	background: transparent;
+  }
+}	
+
+.projectCaption {
+	width: 100%;
+	position: absolute;
+	z-index: 1000;
+	@include absolutecenter('x') 
+}
+.project>img {
+	@include absolutecenter('both') 
+	position: absolute;
+	border-radius: 2%;
+	/*grid-column: 1 / 5;
+  grid-row: 2 / 6;*/
+}
+

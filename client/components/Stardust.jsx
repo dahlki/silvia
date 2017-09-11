@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { TweenLite, TweenMax } from 'gsap';
 import { default as utils } from '../utils/animationHelpers';
-const r = utils.random;
-const {animateStar, animateStaticStar, setTween} = utils;
+
 
 export default class Stardust extends Component {
   constructor(props) {
@@ -14,31 +13,39 @@ export default class Stardust extends Component {
       },
       star: [],
       staticStar: [],
-      isStatic: props.isStatic,
-      // stardustDiv: this.stardustRef
+      // isStatic: props.isStatic,
+      starType: props.starType
     }
   }
-
+ 
   componentDidMount() {
-    // window.addEventListener("resize", this.handleResize.bind(this));
-    const stardustDiv = this.stardustRef;
-    // const h = stardustDiv.clientHeight;
-    // const w = stardustDiv.clientWidth;
+
+    const {animateStar, animateStaticStar, setTween, setSVGTween} = utils;
+
     const h = this.state.windowSize.h;
     const w = this.state.windowSize.w;
 
     const star = this.starRef;
-    const staticStar = this.staticStarRef;
+    // const staticStar = this.staticStarRef;
 
-    if (!this.state.isStatic) {
+    const starType = this.state.starType;
+
+    if (starType === "active") {
       setTween(star, 'star', w, h, 0)
       this.setState({star})
       animateStar(star, w, h);
-    } else {
-      setTween(staticStar, 'staticStar', w, h, 1)
-      this.setState({staticStar})
-      animateStaticStar(staticStar);
+
+    } else if (starType === "bubble") {
+      setTween(star, 'staticStar', w, h, 1)
+      this.setState({star})
+      animateStaticStar(star);
+
+    } else if(starType === "staticSVG") {
+      console.log(this.props.star.props.blackStarRef);
+      setSVGTween(this.props.star.props.blackStarRef, 'blackStar', w, h, 1)
+      // animateStaticStar(this.props.star, 5)
     }
+
   }
 
    handleResize(e) {
@@ -46,17 +53,12 @@ export default class Stardust extends Component {
     this.setState({windowSize: {w, h}})
   }
 
-  componentWillUnmount() {
-    // window.removeEventListener("resize", this.handleResize.bind(this));
-  }
-
   render () {
     return (
-      <div ref={c => this.stardustRef = c}>
+      <div ref={c => this.stardustContainerRef = c}>
         <div ref={s => this.starRef = s}/>
-        <div ref={s => this.staticStarRef = s}/>
       </div>
-      )
+    )
   }
 }
 

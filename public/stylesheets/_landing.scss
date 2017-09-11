@@ -1,0 +1,116 @@
+@import "utils";
+
+.background {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  /*background-attachment: fixed;*/
+  webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*overflow: hidden;*/
+  bottom: 0;
+  /*background-repeat: no-repeat;*/
+}
+
+.buttonShowName {
+  // cursor: url(../assets/cursor.jpg), pointer;
+  @include absolutecenter('both');
+  pointer-events: visible;
+  visibility: visible;
+  height: 5em;
+  width: 5em;
+  &.hide {
+    display: none;
+  }
+}
+
+.nameDiv {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 500; 
+  /*display:block;*/
+ }
+.name {
+  /*cursor: url(../assets/cursor.jpg), pointer;*/
+  z-index: 2000;
+  @include absolutecenter('both');
+  font-family: 'Monoton', 'Arial Black', sans-serif;
+  font-size: 5.5em;
+  font-weight: normal;
+  color: rgb(69, 12, 24);
+  text-shadow: -2px -2px rgba(234,114,198,.7);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-animation: colorchange 20s infinite alternate;
+  -webkit-animation-delay: 1.2s; /* Safari 4.0 - 8.0 */
+  animation-delay: 1.2s;
+  /*animation-play-state: running; rgba(142, 139, 139, 0.3);*/
+
+  @-webkit-keyframes colorchange {
+    0% {color: #f98c8c;}
+    10% {color: #9f3711;}
+    20% {color: #ffff00;}
+    30% {color: #466b8e;}
+    40% {color: #f40b43;}
+    50% {color: #3640cf;}
+    60% {color: #be6c6c;}
+    70% {color: #c212b6;}
+    80% {color: #2dcfaf;}
+    90% {color: #800334;}
+    100% {color: #f98c8c;}
+  }
+  &:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+    /*cursor: url(../assets/cursor.jpg), pointer;*/
+  }
+}
+/*#8e44ad #b929af #34495e #f47dcb #345270 #f1e10e*/
+@media screen and (min-width: 771px) {
+  .name {
+    white-space: nowrap;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 770px) {
+  .name {
+    font-size: 4em;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  .name {
+    font-size: 3.5em;
+    text-align: center;
+  }
+}
+.transitionDiv {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  padding: 0;
+  z-index: 6000;
+}
+.transition {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  /*background-color: white;*/
+  /*box-shadow:0px 0px 10em 6em rgba(200, 237, 244, .5);*/
+  border-radius: 50%;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  z-index: 6000;
+}
+.transitionOverlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: white;
+  z-index: 60001;
+  /*@include absolutecenter('both')*/
+}

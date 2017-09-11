@@ -6,11 +6,12 @@ $pale-yellow-gradient: #f3f2c1;
 $peach-gradient: rgb(247, 107, 88);
 $pink-color: rgb(241, 184, 200);
 $another-pink: #EFB6B6;
-$contact-icon-color: rgb(158, 71, 71);
-/*rgb(148, 149, 148) rgb(227, 11, 63)*/
+$contact-icon-color: #300017;
+$purple: #ADA8ED;
+/*rgb(148, 149, 148) rgb(227, 11, 63) rgb(158, 71, 71) CDDC01*/
 
 ////// mixin for centering //////
-/*example: p { @include absolutecenter(y) }*/
+/*example: p { @include absolutecenter("y") }*/
 @mixin absolutecenter($axis: "both"){
   position:absolute;
   @if $axis == "y"{
@@ -59,4 +60,4 @@ $contact-icon-color: rgb(158, 71, 71);
   100%{background-position:50% 0%}
 }
 
-$animation-body: BackgroundGradient 15s ease infinite;
+$animation-body: BackgroundGradient 30s ease infinite;
