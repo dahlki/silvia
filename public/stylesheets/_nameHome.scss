@@ -1,0 +1,59 @@
+@import "utils";
+
+
+.silviaDiv {
+  height: 6em;
+  width: 20em;
+  position: absolute;
+  left: 3em;
+  top: 3em;
+  z-index: 1000;
+}
+/*#da322c*/
+.silvia {
+  /*right: 100vw;*/
+  /*left:100vw; */
+  /*opacity: 0;*/
+  /*left:0;*/
+  top:0; 
+  width:100%; 
+  height:100%;
+  position: absolute;
+  
+  &>path {
+    fill: #300017;
+    stroke: #ADA8ED;
+    /*da322c ADA8ED 932F40 F7D1C2 45021E 5E0329 450220 44121A 86446C 4F0310 300017*/
+    /*300017 ADA8ED*/
+    stroke-width: 3.5px;
+  }
+  &:hover {
+    #i1-dot, #i2-dot {
+      /*fill: rgb(66,171,158);
+      stroke: #e0dedf;
+      stroke-width: 3px;*/
+      /*filter:url('#blur-filter');*/
+      /*filter: x="-2" y="-2" width="200" height="200";*/
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .silviaDiv {
+    top: 2em;
+    height: 5em;
+    @include absolutecenter('x') 
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .silviaDiv {
+    top: 2em;
+    height: 4em;
+    @include absolutecenter('x') 
+  }
+}
+
+#s, #i1, #l, #v, #i2, #a, #i1-dot, #i2-dot {
+}
+#dot-s, #dot1-i1 {
+}

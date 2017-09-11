@@ -3,12 +3,12 @@ import { TweenLite } from 'gsap';
 import { TransitionGroup, Transition } from 'react-transition-group';
 import classnames from 'classnames/bind';
 import nebula from '../../public/assets/nebula.jpg';
-import Name from './NameContainer';
+import Name from './NameLanding';
 import Stardust from './Stardust';
 import Starburst from './Starburst';
 import StarburstEmitter from './StarburstEmitter';
-import { default as utils } from '../utils/helpers';
-const isMobile = utils.isMobile;
+import helpers from '../utils/helpers';
+
 
 export default class Landing extends Component {
   constructor(props) {
@@ -28,7 +28,6 @@ export default class Landing extends Component {
   handleHover(e) {
     const { clientX: x, clientY: y } = e
     this.setState({ isNameHover: !this.state.isNameHover, mousePos: {x, y} });
-    // if (this.starburstEmitter) this.starburstEmitter.burst();
   }
 
   getNameDiv(ref) {
@@ -36,51 +35,45 @@ export default class Landing extends Component {
   }
 
   render () {
-    const mobile = isMobile();
+    const {isMobile} = helpers;
+    const mobileDevice = isMobile();
     const {isNameHover} = this.state;
     const background = {
       color: this.props.defaultColor,
       backgroundColor: this.props.defaultBackgroundColor,
       backgroundImage: `url(${nebula})`
     };
-    const stardustContainerStyle = classnames('tg');
     const Stars = [];
     const StaticStars = [];
     let numOfStars = 50;
-    if (mobile) numOfStars = 30;
+    if (isMobile()) numOfStars = 30;
 
     for (let i = 0; i < numOfStars; i++ ) {
-      Stars.push(<Stardust isStatic={false} key={i + ''}/>)
-      if (i % 1.5) StaticStars.push(<Stardust isStatic={true} key={i + ''}/>)
+      Stars.push(<Stardust starType={"active"} key={i + ''}/>)
+      if (i % 2) StaticStars.push(<Stardust starType={"bubble"} key={i + ''}/>)
     }
 
     return (
       <div className="background" style={background}>
         <Name 
-          pathname={this.props.match.path} 
           onMouseOver={this.handleHover} 
           onMouseLeave={this.handleHover} 
           getNameDiv={this.getNameDiv}
+          onClick={this.props.nameClick}
         />
-        <TransitionGroup className={stardustContainerStyle}>
-          {Stars}
-        </TransitionGroup>
-        <TransitionGroup className={stardustContainerStyle}>
-          {StaticStars}
-        </TransitionGroup>
-          {
-            (isNameHover)
-            ? (
-              <div className="starburstDiv">
-                <StarburstEmitter 
-                  ref={c => this.starburstEmitter = c} 
-                  mousePos={this.state.mousePos} 
-                  starburstDiv={this.state.nameDiv}
-                />
-              </div>
-              )
-            : null
-          }
+        {Stars}
+        {StaticStars}
+        {
+          (isNameHover)
+          ? (
+              <StarburstEmitter 
+                ref={c => this.starburstEmitter = c} 
+                mousePos={this.state.mousePos} 
+                starburstDiv={this.state.nameDiv}
+              />
+            )
+          : null
+        }
       </div>
     )
   }
