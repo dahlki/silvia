@@ -36,7 +36,6 @@ export default class Landing extends Component {
 
   render () {
     const {isMobile} = helpers;
-    const mobileDevice = isMobile();
     const {isNameHover} = this.state;
     const background = {
       color: this.props.defaultColor,
@@ -81,5 +80,5 @@ export default class Landing extends Component {
 
 Landing.defaultProps = {
   defaultColor: 'rgb(102, 19, 57)',
-  defaultBackgroundColor: '#f9c4b9',
+  defaultBackgroundColor: '#F9E3E9',
 }

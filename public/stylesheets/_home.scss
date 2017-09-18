@@ -2,15 +2,24 @@
 
 .home {
   margin: auto;
-  height:100vh;
+  /*height:100vh;*/
   width:100vw;
-  overflow: scroll;
+  overflow: hidden;
   background-repeat: no-repeat;
+
+  background-position: center;
+  /*background-attachment: fixed;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: scroll;
+  bottom: 0;
 }
 
 .gradient {
-  overflow-y: visible;
-  background-color: black; 
+  /*overflow-y: visible;*/
+  background-color: #091022; 
   /*161B29 060F25 0d1618 0D1018 41140A 9A582D 030C22 0D0F18 0A0D1A*/
   /*background: linear-gradient(180deg, #2F3E66, #171E32);*/
   /*background: linear-gradient(deg, $peachy-pink-gradient, #F1B8C8); 2F3E66
@@ -37,11 +46,36 @@
     @include gradient;
   }*/
 }
+.homeBackdrop{
+  position: absolute;
+  width:100vw;
+  height:100vh;
+  z-index: 1002
+}
 .blackStar {
-  z-index: 100;
+  z-index: 1002;
+  @include absolutecenter('x');
+  width:.15em;
+  height:.15em;
+  border-radius: 50%;
+  /*background-color: white;*/
+}
+
+.blackRing {
+  z-index: 1000;
   @include absolutecenter('x');
   /*box-shadow: 0px 0px 10px 5px rgba(249, 227, 227, 1);*/
   /*filter: url(#blur-filter);*/
   /*-webkit-filter: drop-shadow( -5px -5px 5px #000 );
   filter: drop-shadow( -5px -5px 5px #000 );*/
+}
+.homeHalo {
+  position: relative;
+}
+.blackHalo {
+  z-index: 1000;
+  @include absolutecenter('x');
+
+  /*width:100vw;
+  height:100vh;*/
 }

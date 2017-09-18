@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build-client & npm run start-server",
-    "start-dev": "webpack -w & nodemon server -e html,js,css",
+    "start-dev": "webpack -w & nodemon server -e html,js,jsx,css",
     "start-server": "nodemon server",
     "build-client": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -53,6 +53,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.5",
+    "scrollmagic": "^2.0.5",
     "style-loader": "^0.17.0",
     "styled-components": "^2.1.2",
     "svg-react-loader": "^0.4.4",

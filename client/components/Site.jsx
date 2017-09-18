@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { TweenLite, TimelineMax } from 'gsap';
 import { TransitionGroup, Transition } from 'react-transition-group';
-import classnames from 'classnames/bind';
 import nebula from '../../public/assets/nebula.jpg';
 import Landing from './Landing';
 import Name from './NameContainer';

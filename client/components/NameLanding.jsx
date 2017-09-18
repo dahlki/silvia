@@ -54,7 +54,7 @@ const Name = ({name, nameRef, style, ...props} ) => (
   </div>
 )
 
-const duration = 1000;
+const duration = 800;
 const FadeInName = FadeInWrapper(NameContainer, duration);
 export default FadeInName;
 

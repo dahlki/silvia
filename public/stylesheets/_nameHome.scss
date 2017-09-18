@@ -7,7 +7,7 @@
   position: absolute;
   left: 3em;
   top: 3em;
-  z-index: 1000;
+  z-index: 1005;
 }
 /*#da322c*/
 .silvia {
@@ -21,10 +21,10 @@
   position: absolute;
   
   &>path {
-    fill: #300017;
+    fill: #220010;
     stroke: #ADA8ED;
     /*da322c ADA8ED 932F40 F7D1C2 45021E 5E0329 450220 44121A 86446C 4F0310 300017*/
-    /*300017 ADA8ED*/
+    /*310017 18000b 220010 ADA8ED*/
     stroke-width: 3.5px;
   }
   &:hover {
