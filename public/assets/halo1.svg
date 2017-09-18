@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="513.5px" height="432px" viewBox="0 0 513.5 432" enable-background="new 0 0 513.5 432" xml:space="preserve">
+<filter  id="AI_GaussianBlur_7">
+	<feGaussianBlur  stdDeviation="7"></feGaussianBlur>
+</filter>
+<filter  id="AI_GaussianBlur_4">
+	<feGaussianBlur  stdDeviation="4"></feGaussianBlur>
+</filter>
+<g>
+	
+		<radialGradient id="SVGID_1_" cx="-36.7832" cy="428.6875" r="4.0019" gradientTransform="matrix(-0.1163 -0.9474 0.9474 -0.1163 -47.4771 338.73)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#CAE095"/>
+		<stop  offset="0.0239" style="stop-color:#AFC082"/>
+		<stop  offset="0.0943" style="stop-color:#79815A"/>
+		<stop  offset="0.1703" style="stop-color:#50543B"/>
+		<stop  offset="0.2502" style="stop-color:#333524"/>
+		<stop  offset="0.3348" style="stop-color:#1C1D0F"/>
+		<stop  offset="0.4256" style="stop-color:#030300"/>
+		<stop  offset="0.525" style="stop-color:#000000"/>
+		<stop  offset="0.6374" style="stop-color:#000000"/>
+		<stop  offset="0.7736" style="stop-color:#000000"/>
+		<stop  offset="1" style="stop-color:#000000"/>
+	</radialGradient>
+	<circle fill="url(#SVGID_1_)" cx="362.965" cy="323.713" r="3.822"/>
+	
+		<radialGradient id="SVGID_2_" cx="-32.8906" cy="425.6582" r="30.0305" gradientTransform="matrix(-0.1163 -0.9474 0.9474 -0.1163 -47.4771 338.73)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0.05" style="stop-color:#000000"/>
+		<stop  offset="0.1463" style="stop-color:#000000"/>
+		<stop  offset="0.2987" style="stop-color:#162718"/>
+		<stop  offset="0.4406" style="stop-color:#2B422D"/>
+		<stop  offset="0.5675" style="stop-color:#3B583D"/>
+		<stop  offset="0.675" style="stop-color:#446747"/>
+		<stop  offset="0.75" style="stop-color:#486C4A"/>
+		<stop  offset="0.7873" style="stop-color:#839472"/>
+		<stop  offset="0.8213" style="stop-color:#BABE9A"/>
+		<stop  offset="0.8464" style="stop-color:#E0DDB8"/>
+		<stop  offset="0.86" style="stop-color:#F2EDC7"/>
+		<stop  offset="0.8801" style="stop-color:#EAE4C0"/>
+		<stop  offset="0.898" style="stop-color:#D8D1B0"/>
+		<stop  offset="0.9151" style="stop-color:#BCB599"/>
+		<stop  offset="0.9317" style="stop-color:#9A917B"/>
+		<stop  offset="0.9479" style="stop-color:#736A5A"/>
+		<stop  offset="0.9639" style="stop-color:#4C453A"/>
+		<stop  offset="0.9796" style="stop-color:#251F18"/>
+		<stop  offset="0.9948" style="stop-color:#000000"/>
+		<stop  offset="1" style="stop-color:#000000"/>
+	</radialGradient>
+	<circle opacity="0.2" fill="url(#SVGID_2_)" enable-background="new    " cx="359.628" cy="320.378" r="28.664"/>
+	<line fill="none" x1="296.233" y1="256.985" x2="362.965" y2="323.715"/>
+	
+		<radialGradient id="SVGID_3_" cx="41.1201" cy="367.834" r="80.0793" gradientTransform="matrix(-0.1163 -0.9474 0.9474 -0.1163 -47.4771 338.73)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#AFAFB0"/>
+		<stop  offset="0.73" style="stop-color:#DCB5A9"/>
+		<stop  offset="1" style="stop-color:#AFAFB0"/>
+	</radialGradient>
+	<circle opacity="0.15" fill="url(#SVGID_3_)" enable-background="new    " cx="296.235" cy="256.985" r="76.439"/>
+	
+		<radialGradient id="SVGID_4_" cx="41.1201" cy="367.834" r="40.0408" gradientTransform="matrix(-0.1163 -0.9474 0.9474 -0.1163 -47.4771 338.73)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0.15" style="stop-color:#FFFFFF"/>
+		<stop  offset="0.2121" style="stop-color:#F3E3E2"/>
+		<stop  offset="0.3162" style="stop-color:#E6C1C1"/>
+		<stop  offset="0.3991" style="stop-color:#DFACAF"/>
+		<stop  offset="0.45" style="stop-color:#DCA5A9"/>
+		<stop  offset="0.5662" style="stop-color:#CCA9AC"/>
+		<stop  offset="0.7419" style="stop-color:#B7ADAF"/>
+		<stop  offset="0.85" style="stop-color:#AFAFB0"/>
+		<stop  offset="0.8609" style="stop-color:#B3B0B1"/>
+		<stop  offset="0.8722" style="stop-color:#BEB3B4"/>
+		<stop  offset="0.8837" style="stop-color:#D0B7B9"/>
+		<stop  offset="0.8952" style="stop-color:#E9BFBF"/>
+		<stop  offset="0.9" style="stop-color:#F6C3C3"/>
+		<stop  offset="0.9154" style="stop-color:#DEBBBC"/>
+		<stop  offset="0.9335" style="stop-color:#CAB6B7"/>
+		<stop  offset="0.9527" style="stop-color:#BBB2B3"/>
+		<stop  offset="0.9738" style="stop-color:#B2AFB1"/>
+		<stop  offset="1" style="stop-color:#AFAFB0"/>
+	</radialGradient>
+	<circle opacity="0.72" fill="url(#SVGID_4_)" enable-background="new    " cx="296.235" cy="256.985" r="38.22"/>
+	
+		<polyline opacity="0.03" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" enable-background="new    " points="
+		296.233,256.985 369.342,219.658 296.233,256.985 223.127,294.311 296.233,256.985 333.561,330.092 296.233,256.985 
+		258.906,183.878 296.233,256.985 298.631,175.395 296.233,256.985 293.839,338.574 296.233,256.985 377.823,259.381 
+		296.233,256.985 214.645,254.588 296.233,256.985 330.729,195.045 296.233,256.985 261.739,318.926 296.233,256.985 
+		358.174,291.479 296.233,256.985 234.294,222.491 296.233,256.985 373.461,247.252 296.233,256.985 219.007,266.719 
+		296.233,256.985 305.969,334.211 296.233,256.985 286.5,179.759 296.233,256.985 354.637,211.293 296.233,256.985 237.833,302.678 
+		296.233,256.985 341.929,315.385 296.233,256.985 250.541,198.582 296.233,256.985 291.153,180.65 296.233,256.985 
+		301.314,333.318 296.233,256.985 372.566,251.903 296.233,256.985 219.901,262.066 296.233,256.985 351.167,225.298 
+		296.233,256.985 241.301,288.672 296.233,256.985 327.923,311.919 296.233,256.985 264.547,202.051 296.233,256.985 
+		313.637,173.685 296.233,256.985 278.83,340.285 296.233,256.985 379.535,274.387 296.233,256.985 212.934,239.58 296.233,256.985 
+		360.651,200.402 296.233,256.985 231.819,313.567 296.233,256.985 352.813,321.402 296.233,256.985 239.652,192.568 
+		296.233,256.985 359.055,230.473 296.233,256.985 233.415,283.496 296.233,256.985 322.748,319.805 296.233,256.985 
+		269.723,194.164 296.233,256.985 318.893,185.436 296.233,256.985 273.576,328.535 296.233,256.985 367.785,279.643 
+		296.233,256.985 224.682,234.326 	"/>
+</g>
+<g opacity="0.5" filter="url(#AI_GaussianBlur_7)">
+	<circle fill="none" stroke="#FCE3E2" stroke-width="18" stroke-miterlimit="10" cx="230.634" cy="201.939" r="144"/>
+</g>
+<circle opacity="0.3" fill="none" stroke="#F9F2F2" stroke-miterlimit="10" enable-background="new    " cx="230.634" cy="201.939" r="144"/>
+<circle opacity="0.5" fill="none" stroke="#F59494" stroke-miterlimit="10" enable-background="new    " cx="230.635" cy="201.939" r="145.8"/>
+<g>
+	<g filter="url(#AI_GaussianBlur_7)">
+		<circle fill="none" stroke="#F6D0AA" stroke-miterlimit="10" cx="264.164" cy="229.86" r="99.204"/>
+	</g>
+	
+		<circle opacity="0.1" fill="none" stroke="#F6D0AA" stroke-miterlimit="10" enable-background="new    " cx="263.955" cy="230.111" r="99.205"/>
+</g>
+<g filter="url(#AI_GaussianBlur_4)">
+	<circle fill="none" stroke="#F6D0AA" stroke-miterlimit="10" cx="364.738" cy="325.661" r="36"/>
+</g>
+<g opacity="0.2" filter="url(#AI_GaussianBlur_7)">
+	<circle fill="#F6D0AA" cx="295.497" cy="256.364" r="72"/>
+</g>
+<circle opacity="0.7" fill="#FFFFFF" cx="369.391" cy="329.479" r="4.5"/>
+</svg>

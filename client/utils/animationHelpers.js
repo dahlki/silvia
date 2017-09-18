@@ -30,12 +30,12 @@ const Fns = {
 		} else scale = userScale;
 
 		if (!userDelay) {
-			delay = 8
+			delay = random(8) + 5
 		} else delay = userDelay;
 
 		el.Tween1 = TweenMax.to(
 			el,
-			random(delay)+5,
+			delay,
 			{
 				scale:scale,
 				repeat:-1,

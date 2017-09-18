@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="360px" height="360px" viewBox="0 0 360 360" enable-background="new 0 0 360 360" xml:space="preserve">
+<radialGradient id="SVGID_1_" cx="180" cy="180" r="73.5" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#010101;stop-opacity:0"/>
+	<stop  offset="0.0623" style="stop-color:#0C0B0B;stop-opacity:0.0194"/>
+	<stop  offset="0.1216" style="stop-color:#232120;stop-opacity:0.0379"/>
+	<stop  offset="0.1798" style="stop-color:#3B3835;stop-opacity:0.056"/>
+	<stop  offset="0.2372" style="stop-color:#524F48;stop-opacity:0.0739"/>
+	<stop  offset="0.2942" style="stop-color:#6D6A5D;stop-opacity:0.0917"/>
+	<stop  offset="0.3508" style="stop-color:#8D8972;stop-opacity:0.1093"/>
+	<stop  offset="0.407" style="stop-color:#BBB48B;stop-opacity:0.1269"/>
+	<stop  offset="0.4618" style="stop-color:#F1E99F;stop-opacity:0.1439"/>
+	<stop  offset="0.469" style="stop-color:#FDF4A6;stop-opacity:0.1462"/>
+	<stop  offset="0.4951" style="stop-color:#F4DEB6;stop-opacity:0.4213"/>
+	<stop  offset="0.55" style="stop-color:#E6ACCE"/>
+	<stop  offset="0.5752" style="stop-color:#569C5C"/>
+	<stop  offset="0.58" style="stop-color:#199A4A"/>
+	<stop  offset="0.5805" style="stop-color:#43994E"/>
+	<stop  offset="0.5819" style="stop-color:#769858"/>
+	<stop  offset="0.5835" style="stop-color:#989664"/>
+	<stop  offset="0.5851" style="stop-color:#B1946C"/>
+	<stop  offset="0.587" style="stop-color:#C69173"/>
+	<stop  offset="0.5891" style="stop-color:#D78F79"/>
+	<stop  offset="0.5915" style="stop-color:#E48D7C"/>
+	<stop  offset="0.5946" style="stop-color:#EC8C7F"/>
+	<stop  offset="0.5988" style="stop-color:#F28B81"/>
+	<stop  offset="0.6106" style="stop-color:#F58C81"/>
+</radialGradient>
+<circle fill="none" stroke="url(#SVGID_1_)" stroke-width="3" stroke-miterlimit="10" cx="180" cy="180" r="72"/>
+<circle fill="none" stroke="#009444" stroke-width="2" stroke-miterlimit="10" cx="180" cy="180" r="68.4"/>
+<radialGradient id="SVGID_2_" cx="180" cy="180" r="65.7998" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#010101;stop-opacity:0"/>
+	<stop  offset="0.0623" style="stop-color:#0C0B0B;stop-opacity:0.0194"/>
+	<stop  offset="0.1216" style="stop-color:#232120;stop-opacity:0.0379"/>
+	<stop  offset="0.1798" style="stop-color:#3B3835;stop-opacity:0.056"/>
+	<stop  offset="0.2372" style="stop-color:#524F48;stop-opacity:0.0739"/>
+	<stop  offset="0.2942" style="stop-color:#6D6A5D;stop-opacity:0.0917"/>
+	<stop  offset="0.3508" style="stop-color:#8D8972;stop-opacity:0.1093"/>
+	<stop  offset="0.407" style="stop-color:#BBB48B;stop-opacity:0.1269"/>
+	<stop  offset="0.4618" style="stop-color:#F1E99F;stop-opacity:0.1439"/>
+	<stop  offset="0.469" style="stop-color:#FDF4A6;stop-opacity:0.1462"/>
+	<stop  offset="0.4951" style="stop-color:#F4DEB6;stop-opacity:0.4213"/>
+	<stop  offset="0.55" style="stop-color:#E6ACCE"/>
+</radialGradient>
+<circle fill="none" stroke="url(#SVGID_2_)" stroke-width="2" stroke-miterlimit="10" cx="180" cy="180" r="64.8"/>
+<radialGradient id="SVGID_3_" cx="180" cy="180" r="117" gradientUnits="userSpaceOnUse">
+	<stop  offset="0.0175" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	<stop  offset="0.5797" style="stop-color:#FFFFFF;stop-opacity:0.2576"/>
+	<stop  offset="0.6723" style="stop-color:#FFFFFF;stop-opacity:0.3"/>
+	<stop  offset="0.8016" style="stop-color:#CAC7DA;stop-opacity:0.2014"/>
+	<stop  offset="0.9313" style="stop-color:#A7A3C2;stop-opacity:0.1024"/>
+	<stop  offset="1" style="stop-color:#9B96BA;stop-opacity:0.05"/>
+</radialGradient>
+<circle fill="url(#SVGID_3_)" cx="180" cy="180" r="117"/>
+</svg>

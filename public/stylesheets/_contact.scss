@@ -1,152 +1,201 @@
 @import "utils";
-
+/*************
 .tableContainer {
   z-index: 1000;
   box-sizing: content-box;
   width: 100%;
-  /*position: absolute;*/
   bottom: 1em;
   position: fixed;
-  background-color: #E0DEDF;
+  background-color: $off-white;
   @media screen and (max-height: 500px) {
     bottom: .5em;
   }
   &:hover {
     z-index: 1;
-    /*background: -webkit-linear-gradient(-45deg, #E0DEDF 35%, $contact-icon-color 15%, $contact-icon-color 50%, #E0DEDF 50%, #E0DEDF 75%, $contact-icon-color 75%);*/
-    background: -webkit-linear-gradient(-45deg, #E0DEDF 45%, $purple 40%, $purple 60%, #E0DEDF 55%);
+    //background: -webkit-linear-gradient(-45deg, $off-white 35%, $contact-icon-color 15%, $contact-icon-color 50%, $off-white 50%, $off-white 75%, $contact-icon-color 75%);
+    background: -webkit-linear-gradient(-45deg, $off-white 45%, $purple 40%, $purple 60%, $off-white 55%);
     background-size:8px 8px;
-    /*background-color: #9e4773; #e03218*/
+    //background-color: #9e4773; #e03218
   }
-}
+} 
+********/
+
+
 table {
+  @include absolutecenter('both');
+  z-index: 7002;
   box-sizing: border-box;
-  z-index: 1000;
-  /*bottom: .7em;*/
-  margin: 5px auto;
-  border: 1px solid transparent;
+  /*margin: -4px auto;*/
+  border: 1.5px solid transparent;
+  background-color: transparent;
+  -webkit-transition: border .6s ease-out;
+  -moz-transition: border .6s ease-out;
+  -o-transition: border .6s ease-out;
+  transition: border .6s ease-out;
+
   &:hover {
-    background-color: #E0DEDF; 
-    border: 1px solid $contact-icon-color;
+    -webkit-transition: background-color .8s, border 1.3s ease-in-out;
+    -moz-transition: background-color .8s, border 1.3s ease-in-out;
+    -o-transition: background-color .8s, border 1.3s ease-in-out;
+    transition: background-color .8s, border 1.3s ease-in-out;
+
+  /*-webkit-transition: border 1s ease-in-out;
+    -moz-transition: border 1s ease-in-out;
+    -o-transition: border 1s ease-in-out;
+    transition: border 1s ease-in-out;*/
+
+    background-color: $off-white; 
+    border: 1.5px solid $contact-icon-color;
     /*FF7C72 978b9b 593f53 995470*/
     background-size:8px 8px;
+    pointer-events: auto;
   }
-  /*@media screen and (max-width: 300px) {
-  width: 100%;
-  align-items: center;
-  }*/
+  @media screen and (max-width: 770px) {
+    -webkit-transition: background-color 1.5s, border 1s ease-in-out;
+    -moz-transition: background-color 1.5s, border 1s ease-in-out;
+    -o-transition: background-color 1.5s, border 1s ease-in-out;
+    transition: background-color 1.5s, border 1s ease-in-out;
+    background-color: $off-white; 
+    border: 1px solid $contact-icon-color;
+  }
 }
 tbody {
   align-items: center;
 }
 tr {
-  height: 4em;
+  height: 7em;
+  @media screen and (max-width: 550px) {
+    height: 3em;
+  }
 }
+  
 th, td {
-  /*border: 1px solid black;*/
+  /*border: 1px solid transparent;*/
   text-align: -webkit-center;
-  width: 5em;
+  width: 8em;
+  /*visibility: hidden;*/
+  visibility: visible; 
+  -webkit-transition: visibility 1s ease-in-out;
+  -moz-transition: visibility 1s ease-in-out;
+  -o-transition: visibility 1s ease-in-out;
+  transition: visibility 1s ease-in-out;
+
+  @media screen and (max-width: 550px) {
+    width: 5em;
+  }
 }
-a .github-icon {
-  width: 2.1em;
-  height: 2.1em;
-  display:table-cell;
+a.github-icon {
   pointer-events: visible;
-  z-index: 1000;
+  display:table-cell;
+  /*padding-top: .4em;*/
+  vertical-align: middle;
   -webkit-transition: transform 0.5s ease-in-out;
   -moz-transition: transform 0.5s ease-in-out;
   -o-transition: transform 0.5s ease-in-out;
   -ms-transition: transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
   transform: scale(1);
-  /*-webkit-box-reflect: below 0
-  -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.1, transparent), to(white));*/
-  &>g>g>path {
+  &>svg {
+    pointer-events: none;
+    width: $icon-size;
+    height: $icon-size;
+  }
+  &>svg>g>g>path {
     fill: $contact-icon-color;
   }
-  &>g>g>ellipse {
+  &>svg>g>g>ellipse {
     fill: $contact-icon-color;
   }
   @media screen and (max-width: 550px) {
-    width: 1.8em;
-    height: 1.8em;
+    &>svg {
+      /*pointer-events: visible;*/
+      width: $icon-size-mobile;
+      height: $icon-size-mobile;
+    }
   }
 }
-a .github-icon:hover {
+a.github-icon:hover {
+  pointer-events: visible;
   vertical-align: middle;
   transform: scale( 1.55 );
 
-  &>g>g>path {
+  &>svg>g>g>path {
     fill: $peachy-pink-gradient;
-    pointer-events: visible;
   }
-  &>g>g>ellipse {
+  &>svg>g>g>ellipse {
     fill: white;
   }
   @media (hover:none) {
-      width: 2em;
-      height: 2em;
-      transform: scale(1);
-    &>g>g>path {
+    /*pointer-events: none;*/
+    width: $icon-size-mobile;
+    height: $icon-size-mobile;
+    transform: scale(1);
+
+    &>svg>g>g>path {
       fill: $contact-icon-color;
     }
   }
 }
 
-.linkedin-icon {
-  width: 2em;
-  height: 2em;
-  display:table-cell;
-  padding-bottom: .15em;
-  padding-left: .15em;
+a.linkedin-icon {
   pointer-events: visible;
-  z-index: 1000;
+  display:table-cell;
+  padding-bottom: .3em;
+  padding-left: .15em;
+  vertical-align: middle;
   -webkit-transition: transform 0.5s ease-in-out;
   -moz-transition: transform 0.5s ease-in-out;
   -o-transition: transform 0.5s ease-in-out;
   -ms-transition: transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
   transform: scale(1);
-  /*-webkit-box-reflect: below 0
-  -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.15, transparent), to(white));*/
-
-  &>path, rect, circle {
-    fill: $contact-icon-color;
+  &>svg {
+    pointer-events: none;
+    width: $icon-size;
+    height: $icon-size;
+    padding-left: .2em;
+    &>path, rect, circle {
+      fill: $contact-icon-color;
+    }
   }
   @media screen and (max-width: 550px) {
-    width: 1.8em;
-    height: 1.8em;
+   &>svg {
+      /*pointer-events: visible;*/
+      width: $icon-size-mobile;
+      height: $icon-size-mobile;
+    }
   }
 }
-a .linkedin-icon:hover {
-  width: 2.4em;
-  height: 2.4em;
+a.linkedin-icon:hover {
+ /* width: 2.4em;
+  height: 2.4em;*/
+  pointer-events: visible;
   vertical-align: middle;
   transform: scale(1.5);
-  &>path, rect {
+  &>svg>path, rect {
     fill: $peachy-pink-gradient;
-    pointer-events: visible;
   }
-  &>circle {
+  &>svg>circle {
     fill: white;
-    pointer-events: visible;
   }
   @media (hover: none) {
-      width: 2em;
-      height: 2em;
-      transform: scale(1);
-      &>path, rect {
-        fill: $contact-icon-color;
-      }
+    /*pointer-events: none;*/
+    width: 2em;
+    height: 2em;
+    transform: scale(1);
+    &>svg>path, rect {
+      fill: $contact-icon-color;
+    }
   }
 }
 
-a .email-icon {
-  width: 2em;
-  height: 2em;
-  display: table-cell;
+a.email-icon {
   pointer-events: visible;
-  z-index: 1000;
+  width: $icon-size;
+  height: $icon-size;
+  display: table-cell;
+  /*padding-top: .4em;*/
+  vertical-align: middle;
   -webkit-transition: transform 0.5s ease-in-out;
   -moz-transition: transform 0.5s ease-in-out;
   -o-transition: transform 60.5 ease-in-out;
@@ -157,24 +206,35 @@ a .email-icon {
   stroke-opacity: 0;
   /*-webkit-box-reflect: below 0
   -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.15, transparent), to(white));*/
-
-  &>g>path {
+  &>svg {
+    pointer-events: none;
+    width: $icon-size;
+    height: $icon-size;
+  }
+  &>svg>g>path {
     fill: rgba(250, 250, 250, 0);
   }
   @media screen and (max-width: 550px) {
-    width: 1.8em;
-    height: 1.8em;
+    &>svg {
+      /*pointer-events: visible;*/
+      /*padding-top: .4em;*/
+      width: $icon-size-mobile;
+      height: $icon-size-mobile;
+    }
   }
 }
-a .email-icon:hover {
-  width: 2.4em;
-  height: 2.4em;
+a.email-icon:hover {
+  /*width: 2.4em;
+  height: 2.4em;*/
+  padding-top: 0em;
+  pointer-events: visible;
   vertical-align: middle;
   stroke-opacity: 1;
   fill: $peachy-pink-gradient;
-  pointer-events: visible;
   transform: scale(1.5);
   @media (hover: none) {
+    /*pointer-events: none;*/
+    padding-top: 0;
     width: 2em;
     height: 2em;
     transform: scale(1);
@@ -182,12 +242,13 @@ a .email-icon:hover {
   }
 }
 
-a .resume-icon {
-  width: 2em;
-  height: 2em;
-  display:table-cell;
+a.resume-icon {
   pointer-events: visible;
-  z-index: 1000;
+  width: $icon-size;
+  height: $icon-size;
+  display:table-cell;
+  /*padding-top: .4em;*/
+  vertical-align: middle;
   -webkit-transition: transform 0.5s ease-in-out;
   -moz-transition: transform 0.5s ease-in-out;
   -o-transition: transform 0.5s ease-in-out;
@@ -195,23 +256,35 @@ a .resume-icon {
   transition: transform 0.5s ease-in-out;
   transform: scale(1);
   fill: $contact-icon-color;
+  &>svg {
+    pointer-events: none;
+    width: $icon-size;
+    height: $icon-size;
+  }
   @media screen and (max-width: 550px) {
-    width: 1.8em;
-    height: 1.8em;
+    &>svg {
+      /*pointer-events: visible;*/
+      /*padding-top: .4em;*/
+      width: $icon-size-mobile;
+      height: $icon-size-mobile;
+    }
   }
 }
-a .resume-icon:hover {
-  width: 2.4em;
-  height: 2.4em;
+a.resume-icon:hover {
+  /*width: 2.4em;
+  height: 2.4em;*/
+  padding-top: 0;
+  pointer-events: visible;
   vertical-align: middle;
   stroke-opacity: 1;
   fill: $peachy-pink-gradient;
-  pointer-events: visible;
   transform: scale(1.5);
-  &>g>path {
+  &>svg>g>path {
     fill: white;
   }
   @media (hover: none) {
+    /*pointer-events: none;*/
+    padding-top: 0;
     width: 2em;
     height: 2em;
     transform: scale(1);
@@ -219,22 +292,119 @@ a .resume-icon:hover {
   }
 }
 
+.menuDiv {
+  height: 100vh;
+  width: 100vw;
+  /*z-index: 8000;*/
+  &.overlay {
+    /*height: 100vh;
+    width: 100vw;
+    background: -webkit-linear-gradient(135deg, rgba(236,101,183,.2) 0%, rgba(48,0,23,.6) 40%,rgba(48,0,23,.8) 60%, rgba(4,28,64, .7) 100%);
+    background: linear-gradient(135deg, rgba(236,101,183,.2) 0%, rgba(48,0,23,.6) 40%,rgba(48,0,23,.8) 60%, rgba(4,28,64, .7) 100%);*/
+  /*rgba(5,123,224,.3)*/
+  }
+}
+
 .menu {
   @include absolutecenter("x");
-  height: 100%;
-  width: 100%
+  height: 4%;
+  width: 15%;
+  bottom: 4.5%;
+  z-index: 3999;
+  cursor: pointer;
+  /*background-color: rgba(250, 250, 250, .7);*/
+
+  @media screen and (max-width: 350px) {
+    width: 25%;
+  }
+
+  &.active {
+    /*@include absolutecenter("both");*/
+    cursor: auto;
+    transform-origin: center;
+    width: 90%;
+    height: 91%;
+    bottom: 4.5%;
+    /*background-color: rgba(250, 250, 250, 1);*/
+    -webkit-transition: width .4s, height .55s ease-in-out;
+    -moz-transition: width .4s, height .55s ease-in-out;
+    -o-transition: width .4s, height .55s ease-in-out;
+    transition: width .4s, height .55s ease-in-out;
+
+   /* -webkit-transition: width 1.2s, height .5s ease-in-out;
+    -moz-transition: width 1.2s, height .5s ease-in-out;
+    -o-transition: width 1.2s, height .5s ease-in-out;
+    transition: width 1.2s, height .5s ease-in-out;*/
+    background: -webkit-linear-gradient(-45deg, $off-white 45%, #C0B2B9 40%, #C0B2B9 60%, $off-white 55%);
+    background: linear-gradient(-45deg, $off-white 45%, #C0B2B9 40%, #C0B2B9 60%, $off-white 55%);
+    background-size:8px 8px;
+    border: 2px solid #C0B2B9;
+  }
 }
-.contactMenu {
+
+.menuLines {
+  position: fixed;
   @include absolutecenter("x");
-  height: 2px;
+  height: 2.5px;
   width: 8%;
-  background-color: white; 
+  background-color: white;
+  opacity: .7;
+  /*background-color: #F6B4A7;*/
+  z-index: 4000;
+  border-radius: 10%;
+  cursor: pointer;
+  pointer-events: none;
+  &.hover {
+    box-shadow: 0px 0px 8px rgba(249, 227, 227, .8);
+  }
 }
-.line1 {
-  bottom: 6%;
+.topLine1, .topLine2{
+  bottom: 8%;
+  &.layer {
+    opacity: 0;
+  }
 }
-.line2 {
-  bottom: 4%;  
+.bottomLine1, .bottomLine2 {
+  bottom: 5%; 
+  &.layer {
+    opacity: 0;
+  } 
+}
+
+.contactTitle {
+  @include absolutecenter("both");  
+  color: $contact-icon-color;
+  text-shadow: -3px -3px 2px white;
+  padding-bottom: 4em;
+  font-size: 3.2em;
+  white-space: nowrap;
+  font-family: 'Comfortaa', sans-serif;
+  /*font-weight: bold;*/
+}
+@media screen and (max-width: 750px) {
+  .contactTitle {
+    top: 47%;
+    white-space: nowrap;
+    font-size: 1.5em;
+    text-shadow: -1px -1px 2px white;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .contactTitle {
+    top: 47%;
+    white-space: nowrap;
+    font-size: 1em;
+    text-shadow: -1px -1px 1px white;
+  }
+}
+.contactLetter {
+  opacity: 0;
+  display: inline-block;
+}
+.contactLetter-leave {
+  opacity: 1;
+  display: inline-block;
 }
 
 /*.contactMenu {

@@ -31,12 +31,12 @@ export default class Stardust extends Component {
     const starType = this.state.starType;
 
     if (starType === "active") {
-      setTween(star, 'star', w, h, 0)
+      setTween(star, 'star', w, h, .1) // (el, classname, window width, window height, opacity)
       this.setState({star})
       animateStar(star, w, h);
 
     } else if (starType === "bubble") {
-      setTween(star, 'staticStar', w, h, 1)
+      setTween(star, 'staticStar', w, h, .8) // (el, classname, window width, window height, opacity)
       this.setState({star})
       animateStaticStar(star);
 
