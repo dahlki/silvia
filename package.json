@@ -4,20 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build-client & npm run start-server",
-    "start-dev": "webpack -w & nodemon server -e html,js,jsx,css",
-    "start-server": "nodemon server",
-    "build-client": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-dev": "NODE_ENV='development' webpack -w & nodemon server -e html,js,css",
+    "start": "node server",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack"
   },
   "author": "",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dahlki/silvia.git"
-  },
-  "bugs": {
-    "url": "https://github.com/dahlki/silvia/issues"
   },
   "homepage": "https://github.com/dahlki/silvia#readme",
   "dependencies": {
