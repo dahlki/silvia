@@ -39,7 +39,7 @@
 }
 @media screen and (max-width: 700px) {
   .silviaDiv {
-    top: 2em;
+    top: 3em;
     height: 5em;
     @include absolutecenter('x') 
   }
@@ -47,7 +47,8 @@
 
 @media screen and (max-width: 500px) {
   .silviaDiv {
-    top: 2em;
+    top: 6em;
+    width: 100vw;
     height: 4em;
     @include absolutecenter('x') 
   }

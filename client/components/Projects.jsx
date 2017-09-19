@@ -1,33 +1,71 @@
 import React, { Component } from 'react';
+import classnames from 'classnames/bind';
 import FadeInWrapper from './FadeInWrapper';
-import thePalaceOfMusic from '../../public/assets/thepalaceofmusic.jpg';
 
 
 class Projects extends Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			show:false
+		}
+		this._timeout = null
+	}
+
+	shouldComponentUpdate(nextProps, nextState) {
+		if (!this.state.show || nextProps.scroll) return true;
+		else return nextProps.project.title !== this.props.project.title;
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if (!nextProps.scroll) this.setState({show:false})
+		else this.setState({show:true})
+	}	
+
+	componentDidUpdate(prevProps, prevState) {
+		if (this.props.scroll) {
+			const divs = Array.from(this.project.children)
+			divs.forEach(div => div.id = "leave")
+			TweenMax.staggerFromTo("#leave", .8, {top: 0}, {top: "-200%", ease: Back.easeIn.config(1)}, .25);
+
+		} else {
+			this.setState({show:true})
+			const tween = TweenMax.staggerFromTo(".animate", 1.5, {top: "200%"}, {top: 0, ease: Back.easeOut.config(1)}, .5);
+		}
+	}
+
+	componentDidMount() {
+		setTimeout(() => {
+			this.setState({show:true})
+			const tween = TweenMax.staggerFromTo(".animate", 1.8, {top: "200%"}, {top: 0, ease: Back.easeOut.config(1)}, .5);
+		}, 1000)
 	}
 
 	render() {
-		const palace = `${thePalaceOfMusic}`
+		const project = this.props.project
 		// const style = {width: "100%", maxHeight: "fit-content", top: "10%"}
-		const style = {display: "block", maxWidth: "100%", maxHeight: "100%"}
+		const style = {maxWidth: "100%", maxHeight: "100%"}
 
 		return (
-			<div style={this.props.style} className="projects">
-				<div className="project">
-					<div className="projectTitle">the palace of music</div>
-					<img style={style} className="projectImg" src={palace}></img>
-				</div>
+			
+			<div ref={c => this.projectDiv = c} style={this.props.style} className="projectDiv">
+				{ 
+					this.state.show && project ?
+					(<div ref={c => this.project = c} className="animate project">
+						<div className="animate projectTitle">{project.title}</div>
+						<img style={style} className="animate projectImg" src={project.image}></img>
+					</div>) : null
+				}
 			</div>
-			)
+		)
 	}
 };
 
 
-const duration = 2800;
-const FadeInProjects = FadeInWrapper(Projects, duration);
-export default FadeInProjects;
+// const duration = 2800;
+// const FadeInProjects = FadeInWrapper(Projects, duration);
+// export default FadeInProjects;
+export default Projects
 
 /*<ul style={this.props.style} className="projects">
 							<li className="project title">projects</li>
