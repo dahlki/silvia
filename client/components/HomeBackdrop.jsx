@@ -34,7 +34,7 @@ export default class Home extends Component {
 		planets.forEach(planet => {
 			let scale;
 			if(!isMobile()) scale = rR(1, 3)
-			else scale = rR(.5, 1)
+			else scale = rR(1, 2)
 			TweenMax.to(planet, .1, {opacity:rR(.5, 1)})
 			TweenMax.to(planet, 1.8, {scale:scale, x:rR(-window.innerWidth/2, 0), y:r(window.innerHeight * .4)})
 		})
