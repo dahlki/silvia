@@ -26,7 +26,6 @@ export default class Stardust extends Component {
     const w = this.state.windowSize.w;
 
     const star = this.starRef;
-    // const staticStar = this.staticStarRef;
 
     const starType = this.state.starType;
 
@@ -39,13 +38,7 @@ export default class Stardust extends Component {
       setTween(star, 'staticStar', w, h, .8) // (el, classname, window width, window height, opacity)
       this.setState({star})
       animateStaticStar(star);
-
-    } else if(starType === "staticSVG") {
-      console.log(this.props.star.props.blackStarRef);
-      setSVGTween(this.props.star.props.blackStarRef, 'blackStar', w, h, 1)
-      // animateStaticStar(this.props.star, 5)
-    }
-
+    } 
   }
 
    handleResize(e) {

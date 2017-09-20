@@ -9,7 +9,8 @@ class Projects extends Component {
 		this.state = {
 			show:false
 		}
-		this._timeout = null
+		// this.tweenIn = TweenMax.staggerFromTo(".animate", 1.5, {top: "200%"}, {top: 0, ease: Back.easeOut.config(1)}, .5);
+		// this.tweenOut = () => TweenMax.staggerFromTo("#leave", .5, {top: 0}, {top: "-200%", ease: Back.easeIn.config(1)}, .25);
 	}
 
 	shouldComponentUpdate(nextProps, nextState) {
@@ -24,25 +25,29 @@ class Projects extends Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		if (this.props.scroll) {
+			TweenMax.killTweensOf("#leave")
 			const divs = Array.from(this.project.children)
 			divs.forEach(div => div.id = "leave")
-			TweenMax.staggerFromTo("#leave", .8, {top: 0}, {top: "-200%", ease: Back.easeIn.config(1)}, .25);
+			TweenMax.staggerFromTo("#leave", .5, {top: 0}, {top: "-200%", ease: Back.easeIn.config(.8)}, .3);
 
 		} else {
 			this.setState({show:true})
-			const tween = TweenMax.staggerFromTo(".animate", 1.5, {top: "200%"}, {top: 0, ease: Back.easeOut.config(1)}, .5);
+			TweenMax.staggerFromTo(".animate", 1.5, {top: "200%"}, {top: 0, ease: Back.easeOut.config(1)}, .4);
 		}
 	}
 
 	componentDidMount() {
 		setTimeout(() => {
 			this.setState({show:true})
-			const tween = TweenMax.staggerFromTo(".animate", 1.8, {top: "200%"}, {top: 0, ease: Back.easeOut.config(1)}, .5);
-		}, 1000)
+			TweenMax.staggerFromTo(".animate", 1.5, {top: "200%"}, {top: 0, ease: Back.easeOut.config(1)}, .5);
+		}, 500)
 	}
 
 	render() {
-		const project = this.props.project
+		const project = this.props.project;
+		const title = project.title;
+		const image = project.image;
+
 		// const style = {width: "100%", maxHeight: "fit-content", top: "10%"}
 		const style = {maxWidth: "100%", maxHeight: "100%"}
 
@@ -52,8 +57,17 @@ class Projects extends Component {
 				{ 
 					this.state.show && project ?
 					(<div ref={c => this.project = c} className="animate project">
-						<div className="animate projectTitle">{project.title}</div>
-						<img style={style} className="animate projectImg" src={project.image}></img>
+						<div className="animate projectTitle">{title}</div>
+						{ title !== "projects" ?
+							<img style={style} className="animate projectImg" src={image}></img> :
+							<div className="animate projectImg projectTextDiv">
+								<div className="projectText">
+									thanks for visting!<br/>
+									please scroll to see my projects and works in process.<br/>
+									this site: (github)
+								</div>
+							</div>
+						}
 					</div>) : null
 				}
 			</div>

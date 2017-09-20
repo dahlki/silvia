@@ -27,8 +27,12 @@ const helpers = {
 	    array[randomIndex] = temporaryValue;
 	  }
 	  return array;
-	}
+	},
 
+	getRandomNum(n) {
+		if (typeof n === "number") return helpers.random(n)
+		else return helpers.randomRange(n[0], n[1])
+	}
 }
 
 export default helpers
