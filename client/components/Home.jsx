@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StaggeredMotion, spring } from 'react-motion';
 import {Transition, TransitionGroup} from 'react-transition-group';
-import ScrollMagic from 'scrollmagic';
+import debounce from 'lodash.debounce';
 import Stardust from './Stardust';
 import NameHome from './NameHome';
 import Contact from './ContactContainer';
@@ -27,14 +27,15 @@ export default class Home extends Component {
       scroll: false
 		}
 		this._timeout = null;
-		this.handleWheelMove = this.handleWheelMove.bind(this);
 		this.setNextProject = this.setNextProject.bind(this)
+		this.handleWheelMove = this.handleWheelMove.bind(this);
+		this.handleScrollEvent = debounce(this.handleScrollEvent.bind(this), 250, {leading:true, trailing:false})
 	}
 
 	setNextProject(direction) {
 		const { isMobile } = helpers;
-		const delay = isMobile() ? 800 : 100
-		let num
+		const delay = isMobile() ? 1000 : 800;
+		let num;
 
 		if (direction === "forward") {
 			num = (this.state.projectNum + 1) % this.state.projects.length
@@ -56,20 +57,24 @@ export default class Home extends Component {
 	}
 
 	handleWheelMove(e) {
+		e.persist()
+		this.handleScrollEvent(e)
+	}
+
+	handleScrollEvent(e) {
 		const { isMobile } = helpers;
+		const tolerance = 50;
 
-		if(this._timeout){ //if there is already a timeout in process cancel it
-      clearTimeout(this._timeout);
-     }
-     // if (isMobile()) this.setNextProject("forward")
-     // else if (e.deltaY > 0 && isMobile()) this.setNextProject()	
+   	if (e.deltaX) return;
+		if (e.deltaY > 0 || isMobile()) this.setNextProject("forward");
+		else if (e.deltaY < 0 && !isMobile()) this.setNextProject();
+		else return;
 
-     if (e.deltaY > 0 || isMobile()) this.setNextProject("forward")
-     else if (e.deltaY < 0 && !isMobile()) this.setNextProject()
-
-     if(!this.state.scroll) {
-     	this.setState({ scroll: true });
-     }
+		if(!this.state.scroll) {
+				this.setState({ scroll: true });
+			// setTimeout(() => {
+			// }, 50)
+		}
 	}
 
 	componentDidMount() {
@@ -81,20 +86,23 @@ export default class Home extends Component {
 		const mobile = isMobile()
 		let bounds, w, h
 		const Stars = [];
-    let numOfStars = 12;
-    if (mobile) numOfStars = 18;
+    const numOfStars = mobile ? 18 : 10;
 
 		if (this.nameDiv) {
 			bounds = this.nameDiv.getBoundingClientRect();
-			w = bounds.right * 1.25
-			h = bounds.bottom * 1.25
-			if (mobile) { h = bounds.bottom * 2}
+			if (mobile) { 
+				w = [bounds.left, bounds.right]
+				h = [bounds.top * 1, bounds.bottom * 1.25]
+			} else {
+				w = bounds.right * 1.25
+				h = bounds.bottom * 1.25
+			}
 	    for (let i = 0; i < numOfStars; i++ ) {
-	      Stars.push(<Stardust w={w} h={h} starType={"active"} key={i + ''}/>)
+	      Stars.push(<Stardust w={w} h={h} starType={"active"} key={`${i}`}/>)
 	    }
 		}
 		const background = {
-      backgroundImage: `url(${gradient})`,
+      // backgroundImage: `url(${gradient})`,
       backgroundPosition: "center",
       position: "fixed",
 		  height: "100vh",

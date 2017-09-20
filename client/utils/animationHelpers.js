@@ -1,7 +1,7 @@
 //animation helper functions
 import { TweenLite, TweenMax } from 'gsap';
 import helpers from './helpers';
-const {isMobile, random, randomRange} = helpers;
+const {isMobile, random, randomRange, getRandomNum} = helpers;
 
 
 const Fns = {
@@ -11,7 +11,7 @@ const Fns = {
 			el,
 			random(20)+30,
 			{
-				bezier:{type:'soft', values:[{x: random(w),y:random(h)},{x:random(w),y:random(h)}]},
+				bezier:{type:'soft', values:[{x: getRandomNum(w),y:getRandomNum(h)},{x:getRandomNum(w),y:getRandomNum(h)}]},
 				opacity:randomRange(.15, .8),
 				scale:randomRange(1, 3),
 				delay:random(2),
@@ -61,12 +61,13 @@ const Fns = {
 	},
 
 	setTween(el, classname, w, h, opacity) {
+
 		return TweenMax.set(
 			el,
 			{
 				attr: {class: classname},
-				x: random(w),
-				y: random(h),
+				x: getRandomNum(w),
+				y: getRandomNum(h),
 				opacity: random(opacity)
 			}
 		);

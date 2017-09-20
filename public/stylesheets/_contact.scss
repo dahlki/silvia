@@ -19,7 +19,11 @@
   }
 } 
 ********/
+/*.contactDiv {
+  margin: auto;
+  border: 1px solid red;
 
+}*/
 
 table {
   @include absolutecenter('both');
@@ -32,6 +36,7 @@ table {
   -moz-transition: border .6s ease-out;
   -o-transition: border .6s ease-out;
   transition: border .6s ease-out;
+  clear: both;
 
   &:hover {
     -webkit-transition: background-color .8s, border 1.3s ease-in-out;
@@ -64,23 +69,21 @@ tbody {
 }
 tr {
   height: 7em;
-  @media screen and (max-width: 550px) {
-    height: 3em;
+  @media screen and (max-width: 650px) {
+    height: 7%;
   }
 }
   
-th, td {
-  /*border: 1px solid transparent;*/
+td {
   text-align: -webkit-center;
   width: 8em;
-  /*visibility: hidden;*/
   visibility: visible; 
   -webkit-transition: visibility 1s ease-in-out;
   -moz-transition: visibility 1s ease-in-out;
   -o-transition: visibility 1s ease-in-out;
   transition: visibility 1s ease-in-out;
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 650px) {
     width: 5em;
   }
 }
@@ -295,14 +298,6 @@ a.resume-icon:hover {
 .menuDiv {
   height: 100vh;
   width: 100vw;
-  /*z-index: 8000;*/
-  &.overlay {
-    /*height: 100vh;
-    width: 100vw;
-    background: -webkit-linear-gradient(135deg, rgba(236,101,183,.2) 0%, rgba(48,0,23,.6) 40%,rgba(48,0,23,.8) 60%, rgba(4,28,64, .7) 100%);
-    background: linear-gradient(135deg, rgba(236,101,183,.2) 0%, rgba(48,0,23,.6) 40%,rgba(48,0,23,.8) 60%, rgba(4,28,64, .7) 100%);*/
-  /*rgba(5,123,224,.3)*/
-  }
 }
 
 .menu {
@@ -379,22 +374,23 @@ a.resume-icon:hover {
   font-size: 3.2em;
   white-space: nowrap;
   font-family: 'Comfortaa', sans-serif;
+  clear: both;
   /*font-weight: bold;*/
 }
 @media screen and (max-width: 750px) {
   .contactTitle {
     top: 47%;
     white-space: nowrap;
-    font-size: 1.5em;
+    font-size: 2em;
     text-shadow: -1px -1px 2px white;
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 600px) {
   .contactTitle {
-    top: 47%;
+    top: 48%;
     white-space: nowrap;
-    font-size: 1em;
+    font-size: 1.8em;
     text-shadow: -1px -1px 1px white;
   }
 }
@@ -407,15 +403,3 @@ a.resume-icon:hover {
   display: inline-block;
 }
 
-/*.contactMenu {
-  display: block;
-  position: fixed;
-  right: 0;
-  bottom: -5%;
-  width: 15em;
-  height: 5em;
-  background-color: white; 
-  transform:skew(0deg,-45deg);
-  -ms-transform:skew(0deg,-45deg);
-  -webkit-transform:skew(0deg,-45deg);
-}*/
