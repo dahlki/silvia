@@ -19,11 +19,6 @@ export default class NameHome extends Component {
 	componentDidMount() {
 		TweenMax.staggerFrom(this.name.children, 5, {scale:0.5, opacity:0, delay: 1.5, ease:Elastic.easeOut.config(.9), force3D:true}, .3);
 		TweenMax.staggerTo(this.name.children, 1, {opacity:0, ease:Back.easeIn}, .2);
-
-		// TweenMax.staggerTo(this.name.children, 1.3, {x:window.innerWidth, ease: Back.easeOut.config(.75)}, .3);
-		// TweenMax.staggerTo(this.name.children, 1.3, {rotation: 360, x:window.innerWidth, ease: Back.easeOut.config(1)}, .5);
-		// TweenMax.staggerTo(this.name.children, 1, {opacity:1}, .5);
-		// TweenMax.staggerTo(this.name.children, 1, {autoAlpha: 1, ease: Quad.easeInOut}, 0.3);
 	}
 	
 	render() {
@@ -37,7 +32,7 @@ export default class NameHome extends Component {
 			<A key="a" className="silvia" />
 		])
 		return (
-			<div ref={this.props.nameDiv} style={this.props.style} className="silviaDiv">
+			<div ref={this.props.nameDiv} className="silviaDiv">
 				<div ref={c=>this.name=c}>
 					{NameLetters}
 				</div>
