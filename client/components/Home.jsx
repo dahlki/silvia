@@ -29,7 +29,7 @@ export default class Home extends Component {
 		this._timeout = null;
 		this.setNextProject = this.setNextProject.bind(this)
 		this.handleWheelMove = this.handleWheelMove.bind(this);
-		this.handleScrollEvent = debounce(this.handleScrollEvent.bind(this), 250, {leading:true, trailing:false})
+		this.handleScrollEvent = debounce(this.handleScrollEvent.bind(this), 500, {"maxWait": 2200, leading:true, trailing:false})
 	}
 
 	setNextProject(direction) {
@@ -62,6 +62,7 @@ export default class Home extends Component {
 	}
 
 	handleScrollEvent(e) {
+		console.log('scroll--------------');
 		const { isMobile } = helpers;
 		const tolerance = 50;
 
@@ -72,8 +73,6 @@ export default class Home extends Component {
 
 		if(!this.state.scroll) {
 				this.setState({ scroll: true });
-			// setTimeout(() => {
-			// }, 50)
 		}
 	}
 
@@ -86,32 +85,31 @@ export default class Home extends Component {
 		const mobile = isMobile()
 		let bounds, w, h
 		const Stars = [];
-    const numOfStars = mobile ? 18 : 10;
+    const numOfStars = mobile ? 12 : 10;
 
 		if (this.nameDiv) {
 			bounds = this.nameDiv.getBoundingClientRect();
-			if (mobile) { 
+			if (window.innerWidth < 700) { 
 				w = [bounds.left, bounds.right]
 				h = [bounds.top * 1, bounds.bottom * 1.25]
 			} else {
-				w = bounds.right * 1.25
-				h = bounds.bottom * 1.25
+				w = bounds.right * 1.2
+				h = bounds.bottom * 1.2
 			}
 	    for (let i = 0; i < numOfStars; i++ ) {
 	      Stars.push(<Stardust w={w} h={h} starType={"active"} key={`${i}`}/>)
 	    }
 		}
 		const background = {
-      // backgroundImage: `url(${gradient})`,
+      backgroundImage: `url(${gradient})`,
       backgroundPosition: "center",
       position: "fixed",
-		  height: "100vh",
-		  width: "100vw",
 		  backgroundSize: "cover",
 		  backgroundPosition: "center",
 		  backgroundAttachment: "fixed",
 		  backgroundSize: "cover",
-		  bottom: 0
+		  bottom: 0,
+  		backgroundColor: "#091022"
 		}
 
 		const project = this.state.projects[this.state.projectNum]

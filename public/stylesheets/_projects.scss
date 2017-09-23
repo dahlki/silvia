@@ -235,11 +235,11 @@ li.graceshopper {
   /*grid-column: 1 / 5;
   grid-row: 2 / 6;*/
 }
-.projectTextDiv {
+.projectIntroTextDiv {
   width: 90%;
 }
 
-.projectText {
+.projectIntroText {
   @include absolutecenter('x'); 
   width: 100%;
   border-radius: 2%;
@@ -257,13 +257,65 @@ li.graceshopper {
   white-space: normal;
 }
 @media screen and (max-width: 450px) {
-  .projectTextDiv {
+  .projectIntroTextDiv {
     width: 90%;
   }
-  .projectText{
+  .projectIntroText{
     font-size: 1.2em;
     padding: 1em; 
   }
 }
+
+.hover {
+  opacity: .3;
+}
+
+.projectInfo {
+  @include absolutecenter('x');
+}
+
+.project-icon {
+  &>g>g>path {
+      fill:white;
+    }
+  &>g>g>ellipse  {
+    fill:white;
+  }
+
+  &>g>path {
+    fill:white;
+  }
+}
+
+.github-project, .github-site {
+  &:hover {
+    &>g>g>path {
+      fill: $purple;
+    }
+    &>g>g>ellipse  {
+      fill: white;
+    }
+  }
+}
+
+.youtube-project {
+   &:hover {
+    &>g>path {
+      fill: $purple;
+    }
+  }
+}
+
+.link-project {
+   &:hover {
+    &>g>path {
+      fill: $purple;
+    }
+    &>g>g>path {
+      fill: white;
+    }
+  }
+}
+
 
 

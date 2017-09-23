@@ -1,74 +1,171 @@
 import React, { Component } from 'react';
+import { TimelineMax, TweenMax } from 'gsap'
 import classnames from 'classnames/bind';
 import FadeInWrapper from './FadeInWrapper';
+import ProjectInfo from './ProjectInfo';
+import Youtube from '../../public/assets/youtube';
+import Github from '../../public/assets/github';
+import Link from '../../public/assets/link';
+const initialDelay = 2000;
+import debounce from 'lodash.debounce';
 
 
 class Projects extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			show:false
+			topOffset: "200%",
+			show:false,
+			showProjectInfo: false,
+			animating:false,
+			iconHover:false,
+			bounds: {}
 		}
-		// this.tweenIn = TweenMax.staggerFromTo(".animate", 1.5, {top: "200%"}, {top: 0, ease: Back.easeOut.config(1)}, .5);
-		// this.tweenOut = () => TweenMax.staggerFromTo("#leave", .5, {top: 0}, {top: "-200%", ease: Back.easeIn.config(1)}, .25);
+		this.handleHover = this.handleHover.bind(this)
+		this.handleLeave = this.handleLeave.bind(this)
+
+		this.tweenLeave = this.tweenLeave.bind(this)
+		this.tweenEnter = this.tweenEnter.bind(this)
+
+		this.timelineStart = debounce(this.timelineStart.bind(this), 800, {"maxWait": 1400,leading:true, trailing:false})
+		this.projectsTL = new TimelineMax({paused:true})
+	}
+
+	handleHover(e) {
+		console.log('handleHover');
+		this.setState({bounds:this.img.getBoundingClientRect()})
+		this.setState({showProjectInfo: true});
+	}
+	handleLeave(e) {
+		console.log('handleLeave');
+		const {top, bottom, left, right} = this.state.bounds
+		if (e.clientX > right || e.clientX < left || e.clientY > bottom || e.clientY < top) this.setState({showProjectInfo: false});
+	}
+
+	tweenLeave() {
+		console.log('leave');
+		TweenMax.staggerFromTo(
+			"#leave",
+			.5,
+			{top: 0},
+			{top: `-${this.state.topOffset}`, ease: Back.easeIn.config(.8), opacity: 0},
+			.3
+		)
+	}
+
+	tweenEnter() {
+		console.log('enter');
+		console.log('------------');
+
+		TweenMax.staggerFromTo(
+			".animate", 
+			1, 
+			{top: this.state.topOffset}, 
+			{top: 0, ease: Elastic.easeOut.config(.55, .65)}, 
+			.4
+		)
+	}
+
+	timelineStart() {
+		console.log('timelineStart');
+		this.projectsTL.restart()
 	}
 
 	shouldComponentUpdate(nextProps, nextState) {
+		if (this.props.state === "entering") return true;
 		if (!this.state.show || nextProps.scroll) return true;
+		if (this.state.showProjectInfo !== nextState.showProjectInfo) return true;
 		else return nextProps.project.title !== this.props.project.title;
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (!nextProps.scroll) this.setState({show:false})
-		else this.setState({show:true})
+		if (this.props.state === "entering") this.setState({show:true})
+		else if (nextProps.scroll) this.setState({show:true})
+		else this.setState({show:false})
 	}	
 
 	componentDidUpdate(prevProps, prevState) {
-		if (this.props.scroll) {
-			TweenMax.killTweensOf("#leave")
-			const divs = Array.from(this.project.children)
-			divs.forEach(div => div.id = "leave")
-			TweenMax.staggerFromTo("#leave", .5, {top: 0}, {top: "-200%", ease: Back.easeIn.config(.8)}, .3);
+		if (prevState.showProjectInfo && !this.state.showProjectInfo) return;
 
-		} else {
-			this.setState({show:true})
-			TweenMax.staggerFromTo(".animate", 1.5, {top: "200%"}, {top: 0, ease: Back.easeOut.config(1)}, .4);
-		}
+		if (prevProps.project.title !== this.props.project.title) this.setState({showProjectInfo:false})
+
+		if (this.props.scroll) {
+			this.projectsTL.pause()
+			const divs = Array.from(this.project.children);
+			divs.forEach(div => div.id = "leave");
+			this.timelineStart();
+		} else return
 	}
 
 	componentDidMount() {
 		setTimeout(() => {
 			this.setState({show:true})
-			TweenMax.staggerFromTo(".animate", 1.5, {top: "200%"}, {top: 0, ease: Back.easeOut.config(1)}, .5);
-		}, 500)
-	}
+			TweenMax.staggerFromTo(".animate", 1.5, {top: "200%"}, {top: 0, ease: Back.easeOut.config(1.2)}, .5);
+		}, initialDelay);
 
+		this.projectsTL
+		.add(this.tweenLeave)
+		.add(()=> this.setState({show:true}), 1)
+		.add(this.tweenEnter)
+		.add(() => this.projectsTL.kill())
+	}
+	
 	render() {
 		const project = this.props.project;
+
 		const title = project.title;
 		const image = project.image;
 
-		// const style = {width: "100%", maxHeight: "fit-content", top: "10%"}
-		const style = {maxWidth: "100%", maxHeight: "100%"}
+		const header = project.header;
+		const description = project.description;
+
+		const github = project.github;
+		const link = project.link;
+		const video = project.video;
+
+		const imgStyle = {maxWidth: "100%", maxHeight: "100%", backgroundColor:"white", pointerEvents:"auto"};
+		const imgClass = classnames("animate", "projectImg", {"hover": this.state.showProjectInfo});
+		const projectInfoClass = classnames("animate", "projectInfo")
+
+		const githubIconStyle = {width: "1.8em", height: "1.8em", position:"absolute", marginLeft:".5em"}
 
 		return (
 			
 			<div ref={c => this.projectDiv = c} style={this.props.style} className="projectDiv">
 				{ 
 					this.state.show && project ?
-					(<div ref={c => this.project = c} className="animate project">
-						<div className="animate projectTitle">{title}</div>
-						{ title !== "projects" ?
-							<img style={style} className="animate projectImg" src={image}></img> :
-							<div className="animate projectImg projectTextDiv">
-								<div className="projectText">
-									thanks for visting!<br/>
-									please scroll to see my projects and works in process.<br/>
-									this site: (github)
-								</div>
-							</div>
-						}
-					</div>) : null
+					(
+						<div ref={c => this.project = c} className="animate project">
+							<div className="animate projectTitle">{title}</div>
+
+							{ 
+								title !== "projects" ?
+								(<img ref={c => this.img = c} style={imgStyle} className={imgClass} src={image} onMouseOver={this.handleHover} onMouseLeave={this.handleLeave} ></img>) :
+								(<div className="animate projectImg projectIntroTextDiv">
+									<div className="projectIntroText">
+										thanks for visting!<br/>
+										please scroll to see my projects<br/>
+										and works in process.<br/>
+										this site:
+										<a href="https://github.com/dahlki/silvia" target="_blank"><Github style={githubIconStyle} className="project-icon github-site" /></a>
+									</div>
+								</div>)
+							}
+
+							{
+								this.state.showProjectInfo ?
+								<ProjectInfo 
+									infoClass={projectInfoClass}
+									header={header}
+									description={description}
+									github={github}
+									video={video}
+									link={link}
+								/>	: null			
+							}		
+
+						</div>
+					) : null
 				}
 			</div>
 		)
@@ -76,21 +173,7 @@ class Projects extends Component {
 };
 
 
-// const duration = 2800;
-// const FadeInProjects = FadeInWrapper(Projects, duration);
-// export default FadeInProjects;
-export default Projects
+const duration = initialDelay;
+const FadeInProjects = FadeInWrapper(Projects, duration);
+export default FadeInProjects;
 
-/*<ul style={this.props.style} className="projects">
-							<li className="project title">projects</li>
-							<li className="project palace">
-								<div className="projectCaption">the palace of music</div>
-								{<img className="palaceImg" src={palace} style={style}/>}
-							</li>
-							<li className="project blooming">
-								<div className="projectCaption">blooming ice</div>
-							</li>
-							<li className="project graceshopper">
-								<div className="projectCaption">dry goods</div>
-							</li>
-						</ul>*/
