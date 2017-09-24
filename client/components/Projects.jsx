@@ -145,7 +145,7 @@ class Projects extends Component {
 									<div className="projectIntroText">
 										thanks for visting!<br/>
 										please scroll to see my projects<br/>
-										and works in process.<br/>
+										and works in progress.<br/>
 										this site:
 										<a href="https://github.com/dahlki/silvia" target="_blank"><Github style={githubIconStyle} className="project-icon github-site" /></a>
 									</div>
