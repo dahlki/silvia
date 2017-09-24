@@ -66,7 +66,7 @@ export default class Home extends Component {
 		const { isMobile } = helpers;
 		const tolerance = 50;
 
-   	if (e.deltaX) return;
+   	// if (e.deltaX) return;
 		if (e.deltaY > 0 || isMobile()) this.setNextProject("forward");
 		else if (e.deltaY < 0 && !isMobile()) this.setNextProject();
 		else return;

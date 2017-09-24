@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { TimelineMax, TweenMax } from 'gsap'
 import classnames from 'classnames/bind';
+import debounce from 'lodash.debounce';
 import FadeInWrapper from './FadeInWrapper';
 import ProjectInfo from './ProjectInfo';
 import Youtube from '../../public/assets/youtube';
 import Github from '../../public/assets/github';
 import Link from '../../public/assets/link';
 const initialDelay = 2000;
-import debounce from 'lodash.debounce';
 
 
 class Projects extends Component {
@@ -44,13 +44,20 @@ class Projects extends Component {
 
 	tweenLeave() {
 		console.log('leave');
-		TweenMax.staggerFromTo(
-			"#leave",
-			.5,
-			{top: 0},
-			{top: `-${this.state.topOffset}`, ease: Back.easeIn.config(.8), opacity: 0},
-			.3
-		)
+		const divs = Array.from(this.project.children);
+
+		divs.forEach((div, i) => {
+			div.id = "leave";
+
+			TweenMax.staggerFromTo(
+				"#leave",
+				.5,
+				{top: 0},
+				{top: `-${this.state.topOffset}`, ease: Back.easeIn.config(.8), opacity: .3},
+				.4 - (i * .125)
+			)
+			
+		});
 	}
 
 	tweenEnter() {
@@ -91,8 +98,8 @@ class Projects extends Component {
 
 		if (this.props.scroll) {
 			this.projectsTL.pause()
-			const divs = Array.from(this.project.children);
-			divs.forEach(div => div.id = "leave");
+			// const divs = Array.from(this.project.children);
+			// divs.forEach(div => div.id = "leave");
 			this.timelineStart();
 		} else return
 	}
