@@ -1,10 +1,12 @@
 import thePalaceOfMusic from '../../public/assets/thepalaceofmusic.jpg';
 import bloomingIce from '../../public/assets/bloomingice.jpg';
-import dryGoods from '../../public/assets/drygoods.jpg'
+import dryGoods from '../../public/assets/drygoods.jpg';
+import techTalk from '../../public/assets/techtalk.jpg'
 
 const palace = `${thePalaceOfMusic}`
 const blooming = `${bloomingIce}`
 const goods = `${dryGoods}`
+const talk = `${techTalk}`
 
 const projects = [
 
@@ -42,7 +44,7 @@ const projects = [
 
 	{
 		title: '" tech talk " : react native',
-		image: null,
+		image: talk,
 		video: "https://www.youtube.com/watch?v=8I1dKwL9rV4",
 		header: "an introduction to react native for javascript developers",
 		description: ""
