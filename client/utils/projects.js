@@ -22,7 +22,7 @@ const projects = [
 		link: "http://the-palace-of-music.herokuapp.com",
 		video: "https://www.youtube.com/watch?v=6ZMnH9mle-k",
 		header: "a virtual classical music museum",
-		description: "walk through the museum with arrow keys, turn with your mouse, and when close enough, you can click on the portraits to learn more about the composers and listen to a selection of their pieces"
+		description: "walk through the museum with arrow keys, turn with your mouse, and when close enough, click on the portraits to learn more about the composers and listen to a selection of their pieces"
 	},
 
 	{
