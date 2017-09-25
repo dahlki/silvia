@@ -274,6 +274,12 @@ li.graceshopper {
   @include absolutecenter('x');
 }
 
+@media screen and (max-width: 650px) {
+  .description {
+    display: none;
+  }
+}
+
 .project-icon {
   &>g>g>path {
       fill:white;

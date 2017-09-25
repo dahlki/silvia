@@ -2,13 +2,21 @@ import React, { Component } from 'react';
 import { TweenLite } from 'gsap';
 import { TransitionGroup, Transition } from 'react-transition-group';
 import classnames from 'classnames/bind';
+import styled from 'styled-components'
 import nebula from '../../public/assets/nebula.jpg';
-import Name from './NameLanding';
+import NameLanding from './NameLanding';
 import Stardust from './Stardust';
 import Starburst from './Starburst';
 import StarburstEmitter from './StarburstEmitter';
 import helpers from '../utils/helpers';
+import { StyledBackgroundImg } from '../../public/stylesheets/styled-index'
 
+
+const Nebula = StyledBackgroundImg.extend`
+  color: rgb(102, 19, 57);
+  background-color: #F9E3E9;
+  background-image: url(${nebula});
+`
 
 export default class Landing extends Component {
   constructor(props) {
@@ -53,8 +61,8 @@ export default class Landing extends Component {
     }
 
     return (
-      <div className="background" style={background}>
-        <Name 
+      <Nebula>
+        <NameLanding
           onMouseOver={this.handleHover} 
           onMouseLeave={this.handleHover} 
           getNameDiv={this.getNameDiv}
@@ -73,7 +81,7 @@ export default class Landing extends Component {
             )
           : null
         }
-      </div>
+      </Nebula>
     )
   }
 }
