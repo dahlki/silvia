@@ -11,14 +11,8 @@ const ProjectInfo = ({infoClass, header, description, github, video, link}) => {
 
 	const iconStyle = {width: "2em", height: "2em", pointerEvents: "all", margin:".5em"}
 	const infoStyle = {fontFamily: "'Montserrat', sans-serif", boxSizing:"border-box", pointerEvents:"none", color:"white", textAlign:"center", marginTop:"4em", paddingLeft:"2em", paddingRight:"2em", width:"100%", zIndex:"4005", 
-	fontSize:"1.2em", whiteSpace:"pre-wrap", lineHeight: "2", letterSpacing: "1px"}
+	fontSize:"1.2em", whiteSpace:"pre-wrap", lineHeight: "2", letterSpacing: "1px", textOverflow: "ellipsis", overflowY: "hidden"}
 	const headerStyle ={fontSize: "1.15em", textDecoration: "underline"}
-
-	// const header = this.props.header;
-	// const description = this.props.description
-	// const github = this.props.github
-	// const video = this.props.video
-	// const link = this.props.link
 
 	return(
 
@@ -35,7 +29,6 @@ const ProjectInfo = ({infoClass, header, description, github, video, link}) => {
 		</div>
 
 	)
-
 }
 
 export default ProjectInfo;

@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import classnames from 'classnames/bind';
 import FadeInWrapper from './FadeInWrapper';
+import styled from 'styled-components'
+import { standardStyle } from '../../public/stylesheets/styled-index'
 
+
+const NameDiv = styled.div`
+  ${ standardStyle() };
+`
 
 //////  container  //////
 class NameContainer extends Component {
@@ -33,18 +39,18 @@ class NameContainer extends Component {
   render() {
     const name = 'silvia sonn'
     return (
-      <div className="nameDiv" ref={c=>this.nameContainerRef=c} onMouseMove={this.handleMouseMove}>
+      <NameDiv ref={c => this.nameContainerRef = c} onMouseMove={this.handleMouseMove}>
           <Name
-            name={name}
+            nameRef={n => this.nameNode = n}
+            className="name"
             style={this.props.style}
+            name={name}
             onMouseOver={this.props.onMouseOver}
             onMouseLeave={this.props.onMouseLeave}
-            nameRef={n => this.nameNode=n}
-            className="name"
             onClick={this.props.onClick}
           />
       
-      </div>
+      </NameDiv>
     )
   }
 }
