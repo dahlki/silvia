@@ -24,3 +24,23 @@ export function standardStyle(z) {
 		z-index: ${index};
 	`
 }
+
+const mediaSizes = {
+  phone: 420,
+  tablet: 768,
+  laptop: 1366,
+  monitor: 1920 
+}
+
+// iterate through the sizes and create a media template
+export const media = Object.keys(mediaSizes).reduce((accumulator, label) => {
+  const emSize = mediaSizes[label] / 16
+  accumulator[label] = (...args) => css`
+    @media (max-width: ${emSize}em) {
+      ${css(...args)}
+    }
+  `
+  return accumulator
+}, {})
+
+
