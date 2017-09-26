@@ -62,7 +62,6 @@ export default class Home extends Component {
 	}
 
 	handleScrollEvent(e) {
-		console.log('scroll--------------');
 		const { isMobile } = helpers;
 		const tolerance = 50;
 

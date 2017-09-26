@@ -32,18 +32,15 @@ class Projects extends Component {
 	}
 
 	handleHover(e) {
-		console.log('handleHover');
 		this.setState({bounds:this.img.getBoundingClientRect()})
 		this.setState({showProjectInfo: true});
 	}
 	handleLeave(e) {
-		console.log('handleLeave');
 		const {top, bottom, left, right} = this.state.bounds
 		if (e.clientX > right || e.clientX < left || e.clientY > bottom || e.clientY < top) this.setState({showProjectInfo: false});
 	}
 
 	tweenLeave() {
-		console.log('leave');
 		const divs = Array.from(this.project.children);
 
 		divs.forEach((div, i) => {
@@ -61,9 +58,6 @@ class Projects extends Component {
 	}
 
 	tweenEnter() {
-		console.log('enter');
-		console.log('------------');
-
 		TweenMax.staggerFromTo(
 			".animate", 
 			1, 
@@ -74,7 +68,6 @@ class Projects extends Component {
 	}
 
 	timelineStart() {
-		console.log('timelineStart');
 		this.projectsTL.restart()
 	}
 
