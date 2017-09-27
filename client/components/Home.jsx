@@ -27,20 +27,20 @@ export default class Home extends Component {
       scroll: false
 		}
 		this._timeout = null;
-		this.setNextProject = this.setNextProject.bind(this)
+		this.setNextProject = this.setNextProject.bind(this);
 		this.handleWheelMove = this.handleWheelMove.bind(this);
-		this.handleScrollEvent = debounce(this.handleScrollEvent.bind(this), 500, {"maxWait": 2200, leading:true, trailing:false})
+		this.handleScrollEvent = debounce(this.handleScrollEvent.bind(this), 500, {"maxWait": 2200, leading:true, trailing:false});
 	}
 
 	setNextProject(direction) {
-		const { isMobile } = helpers;
-		const delay = isMobile() ? 1000 : 800;
+		const delay = 800;
 		let num;
+		let nextNum;
 
 		if (direction === "forward") {
-			num = (this.state.projectNum + 1) % this.state.projects.length
+			num = (this.state.projectNum + 1) % this.state.projects.length;
 		} else {
-			const nextNum = (this.state.projectNum-1) % this.state.projects.length
+			nextNum = (this.state.projectNum-1) % this.state.projects.length;
 			num = nextNum < 0 ? this.state.projects.length - 1 : nextNum;
 		}
 
@@ -51,14 +51,14 @@ export default class Home extends Component {
 		this._timeout = setTimeout(() => {
 		  this._timeout = null;
 		  this.setState({ scroll: false });
-		  this.setState({projectNum: num})
+		  this.setState({projectNum: num});
 		}, delay);
 
 	}
 
 	handleWheelMove(e) {
-		e.persist()
-		this.handleScrollEvent(e)
+		e.persist();
+		this.handleScrollEvent(e);
 	}
 
 	handleScrollEvent(e) {
@@ -76,27 +76,27 @@ export default class Home extends Component {
 	}
 
 	componentDidMount() {
-		this.setState({projects})
+		this.setState({projects});
 	}
 
 	render() {
-		const {isMobile} = helpers
-		const mobile = isMobile()
-		let bounds, w, h
+		const {isMobile} = helpers;
+		const mobile = isMobile();
+		let bounds, w, h;
 		const Stars = [];
     const numOfStars = mobile ? 12 : 10;
 
 		if (this.nameDiv) {
 			bounds = this.nameDiv.getBoundingClientRect();
 			if (window.innerWidth < 700) { 
-				w = [bounds.left, bounds.right]
-				h = [bounds.top * 1, bounds.bottom * 1.25]
+				w = [bounds.left, bounds.right];
+				h = [bounds.top * 1, bounds.bottom * 1.25];
 			} else {
-				w = bounds.right * 1.2
-				h = bounds.bottom * 1.2
+				w = bounds.right * 1.2;
+				h = bounds.bottom * 1.2;
 			}
 	    for (let i = 0; i < numOfStars; i++ ) {
-	      Stars.push(<Stardust w={w} h={h} starType={"active"} key={`${i}`}/>)
+	      Stars.push(<Stardust w={w} h={h} starType={"active"} key={`${i}`}/>);
 	    }
 		}
 		const background = {
@@ -111,7 +111,7 @@ export default class Home extends Component {
   		backgroundColor: "#091022"
 		}
 
-		const project = this.state.projects[this.state.projectNum]
+		const project = this.state.projects[this.state.projectNum];
   
 	  return (
 	    <div style={background} className='home gradient' onWheel={this.handleWheelMove} onTouchMove={this.handleWheelMove}>

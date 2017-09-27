@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { TransitionGroup, Transition } from 'react-transition-group';
 import propTypes from 'prop-types';
 import StarburstContainer from './StarburstContainer';
 
@@ -14,20 +13,20 @@ export default class StarburstEmitter extends Component {
 		this.burst = this.burst.bind(this);
 	}
 
-	componentWillLeave() {
-		console.log('componentWillLeave');
-	}
 	componentDidMount() {
-		this.setState({bounds:this.props.starburstDiv.getBoundingClientRect()});
-		this.starbursts = this.createBursts();
+		this.createBursts();
 		this.burst();
 	}
 
 	createBursts() {
 		const bursts = [];
-    let i;
-    for (i = 0; i < this.props.burstCount; i++) {
-    	bursts.push(<StarburstContainer ref={s => this.nodes.set([`starburst${i}`], s)} key={`${i}`} bounds={this.state.bounds}/>)
+    for (let i = 0; i < this.props.burstCount; i++) {
+    	bursts.push(
+    		<StarburstContainer 
+    		ref={c => this.nodes.set([`starburst${i}`], c)} 
+    		bounds={this.state.bounds}
+    		key={`${i}`} 
+    		/>)
     }
     return bursts;
 	}
@@ -47,25 +46,26 @@ export default class StarburstEmitter extends Component {
 	}
 
 	render() {
-		const bounds = this.state.bounds;
+		const { bounds } = this.state;
 		const emitterStyle = {
 			width: bounds.width,
 			height: bounds.height,
-			top: bounds.top-50,
-			left: bounds.left-50
+			top: bounds.top - 50,
+			left: bounds.left - 50
 		}
+
 		return (
-				<div className="starburstDiv">
-					<div className="starburstEmitter" style={{emitterStyle}}>
-						{ this.createBursts() }
-					</div>
+			<div className="starburstDiv">
+				<div className="starburstEmitter" style={{emitterStyle}}>
+					{ this.createBursts() }
 				</div>
+			</div>
 		)
 	}
 }
 
 StarburstEmitter.defaultProps = {
-	burstCount: 10,
+	burstCount: 12,
 	burstDelay: 30
 }
 

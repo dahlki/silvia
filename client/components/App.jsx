@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Route, Switch, Link, Redirect } from 'react-router-dom';
 import TransitionGroup from 'react-transition-group/TransitionGroup'
 import styled, { injectGlobal }  from 'styled-components'
-import Name from './NameContainer';
-import Home from './Home';
+// import Name from './NameContainer';
+// import Home from './Home';
 import Site from './Site';
 
 injectGlobal`

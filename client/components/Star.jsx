@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import { TransitionGroup, Transition } from 'react-transition-group';
 import { TimelineMax, TweenMax } from 'gsap';
 import helpers from '../utils/helpers';
 
