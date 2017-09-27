@@ -1,11 +1,13 @@
 import styled, { css } from 'styled-components';
 
-export const StyledBackgroundImg = styled.div`
+export const StandardBackgroundImg = styled.div`
   position: fixed;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
   bottom: 0;
+  color: white;
+  background-color: black;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
