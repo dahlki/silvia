@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { TimelineMax, TweenMax } from 'gsap';
-import PlanetSVG from '../../public/assets/planetSVG1';
 import RadialSVG from '../../public/assets/radialBlur2';
 import Halo from '../../public/assets/halo1';
 import helpers from '../utils/helpers';

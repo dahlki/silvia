@@ -1,8 +1,10 @@
+import reactStarRatingMeter from '../../public/assets/npm.jpg';
 import thePalaceOfMusic from '../../public/assets/thepalaceofmusic.jpg';
 import bloomingIce from '../../public/assets/bloomingice.jpg';
 import dryGoods from '../../public/assets/drygoods.jpg';
-import techTalk from '../../public/assets/techtalk.jpg'
+import techTalk from '../../public/assets/techtalk.jpg';
 
+const npm = `${reactStarRatingMeter}`
 const palace = `${thePalaceOfMusic}`
 const blooming = `${bloomingIce}`
 const goods = `${dryGoods}`
@@ -13,6 +15,15 @@ const projects = [
 	{
 		title: 'projects',
 		image: null
+	},
+
+	{
+		title: 'npm: react-star-rating-meter',
+		image: npm,
+		github: 'https://github.com/dahlki/react-star-rating-meter',
+		link: 'https://www.npmjs.com/package/react-star-rating-meter',
+		header: 'a npm package',
+		description: 'a customizable React star rating component'
 	},
 
 	{ 
