@@ -49,7 +49,7 @@ const projects = [
 		title: 'dry goods',
 		image: goods,
 		github: "https://github.com/dahlki/graceshopper",
-		header: "a simple mock ecommerce site",
+		header: "a simple RESTful mock ecommerce site",
 		description: ""
 	},
 
