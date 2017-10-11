@@ -64,8 +64,6 @@ class ContactContainer extends Component {
   }
 
   updateWindow(e) {
-    console.log('updateWindow', e);
-    console.log(window);
     this.menuTLTop.kill();
     this.menuTLTop1Layers.kill();
     this.menuTLTop2Layers.kill();

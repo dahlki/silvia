@@ -293,6 +293,10 @@ li.graceshopper {
   }
 }
 
+.github-site {
+  @include absolutecenter('x');
+}
+
 .github-project, .github-site {
   &:hover {
     &>g>g>path {

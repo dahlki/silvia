@@ -127,7 +127,7 @@ class Projects extends Component {
 		const imgClass = classnames("animate", "projectImg", {"hover": this.state.showProjectInfo});
 		const projectInfoClass = classnames("animate", "projectInfo")
 
-		const githubIconStyle = {width: "1.8em", height: "1.8em", position:"absolute", marginLeft:".5em"}
+		const githubIconStyle = {width: "1.8em", height: "1.8em", position:"absolute"}
 
 		return (
 			
@@ -146,7 +146,7 @@ class Projects extends Component {
 										thanks for visting!<br/>
 										please scroll to see my projects<br/>
 										and works in progress.<br/>
-										this site:
+										this site was made with React + GSAP.<br/>
 										<a href="https://github.com/dahlki/silvia" target="_blank"><Github style={githubIconStyle} className="project-icon github-site" /></a>
 									</div>
 								</div>)
